@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, MessageCircle, Wrench, Clock, Shield, Star, CheckCircle, Menu, X, MapPin, Mail } from 'lucide-react';
 import WashingMachineService from './WashingMachineService';
+import ContactForm from './ContactForm';
 
 const WashingRepairSG = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -380,6 +381,9 @@ const WashingRepairSG = () => {
             ))}
           </div>
         </div>
+      </section>
+      <section>
+        <ContactForm />
       </section>
 
       {/* Contact Section */}
