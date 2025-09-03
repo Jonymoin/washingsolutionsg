@@ -182,13 +182,32 @@ const WashingMachineService = () => {
             <h3 className="text-2xl font-bold mb-4">Don't See Your Problem Listed?</h3>
             <p className="mb-6">Our experienced technicians can diagnose and fix any washing machine issue!</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center">
-                <Phone className="w-5 h-5 mr-2" />
-                Call Now: +65 8530 1773
-              </button>
-              <button className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                WhatsApp Us
-              </button>
+              <a
+  href="tel:+6585301773"
+  onClick={() => {
+    if (typeof gtag !== "undefined") {
+      gtag("event", "conversion", {
+        send_to: "AW-17526097727/0fozCKCe0JIbEL-OjKVB",
+        value: 1.0,
+        currency: "SGD",
+      });
+    }
+  }}
+  className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center"
+>
+  <Phone className="w-5 h-5 mr-2" />
+  Call Now: +65 8530 1773
+</a>
+
+<a
+  href="https://wa.me/6585301773"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors flex items-center justify-center"
+>
+  WhatsApp Us
+</a>
+
             </div>
           </div>
         </div>
