@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, MessageCircle, Wrench, Clock, Shield, Star, CheckCircle, Menu, X, MapPin, Mail } from 'lucide-react';
+import WashingMachineService from './WashingMachineService';
 
 const WashingRepairSG = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,7 +50,7 @@ const WashingRepairSG = () => {
 
   const brands = [
     'Samsung', 'LG', 'Panasonic', 'Electrolux', 'Bosch', 'Whirlpool', 
-    'Haier', 'Midea', 'Sharp', 'Toshiba', 'Hitachi', 'Fisher & Paykel'
+    'Haier', 'Midea', 'Sharp', 'Toshiba', 'Hitachi', 'Fisher & Paykel', 'Any other Brands'
   ];
 
   const faqs = [
@@ -185,6 +186,9 @@ const WashingRepairSG = () => {
               <span>WhatsApp Us</span>
             </a>
           </div>
+        </div>
+        <div className='mt-14'>
+         <WashingMachineService />
         </div>
       </section>
 
