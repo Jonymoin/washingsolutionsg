@@ -47,7 +47,15 @@ const WashingRepairSG = () => {
     }, 4000);
     return () => clearInterval(timer);
   }, [reviews.length]);
-
+   const handleCallClick = () => {
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-17526097727/0fozCKCe0JIbEL-OjKVB',
+        value: 1.0,
+        currency: 'SGD'
+      });
+    }
+  };
   const brands = [
     'Samsung', 'LG', 'Panasonic', 'Electrolux', 'Bosch', 'Whirlpool', 
     'Haier', 'Midea', 'Sharp', 'Toshiba', 'Hitachi', 'Fisher & Paykel', 'Any other Brands'
@@ -92,6 +100,7 @@ const WashingRepairSG = () => {
               href={whatsappLink} 
               target="_blank" 
               rel="noopener noreferrer" 
+              onClick={handleCallClick}
               className="flex-1 bg-green-600 hover:bg-green-700 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
             >
               <MessageCircle className="h-4 w-4" />
@@ -127,7 +136,7 @@ const WashingRepairSG = () => {
 
             {/* Contact Buttons */}
             <div className="hidden md:flex space-x-3">
-              <a href={`tel:+6585301773`} className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-700 transition-colors">
+              <a href={`tel:+6585301773`} onClick={handleCallClick} className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-700 transition-colors">
                 <Phone className="h-4 w-4" />
                 <span>Call Now</span>
               </a>
@@ -177,7 +186,7 @@ const WashingRepairSG = () => {
           <h1 className="text-5xl font-bold mb-6">Singapore's #1 Washing Machine Repair Service</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">Fast, reliable, and affordable washing machine repair service across Singapore. Same-day service available.</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href={`tel:+6585301773`} className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
+            <a href={`tel:+6585301773`} onClick={handleCallClick} className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
               <Phone className="h-5 w-5" />
               <span>+65 8530 1773</span>
             </a>
