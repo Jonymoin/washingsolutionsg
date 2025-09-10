@@ -3,17 +3,7 @@ import React, { useState } from "react";
 const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // ekhane form data send korba (API ba EmailJS diye)
-    
-    setSubmitted(true);
-
-    // conversion fire
-    window.gtag("event", "conversion", {
-      send_to: "AW-17526097727/ihbuCP3yuJMbEL-OjKVB",
-    });
-  };
+  
 
   return (
     <div>

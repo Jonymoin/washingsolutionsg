@@ -42,21 +42,7 @@ const WashingRepairSG = () => {
   ];
 
   // Auto-rotate reviews every 4 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentReview((prev) => (prev + 1) % reviews.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, [reviews.length]);
-   const handleCallClick = () => {
-    if (window.gtag) {
-      window.gtag('event', 'conversion', {
-        send_to: 'AW-17526097727/0fozCKCe0JIbEL-OjKVB',
-        value: 1.0,
-        currency: 'SGD'
-      });
-    }
-  };
+  
   const brands = [
     'Samsung', 'LG', 'Panasonic', 'Electrolux', 'Bosch', 'Whirlpool', 
     'Haier', 'Midea', 'Sharp', 'Toshiba', 'Hitachi', 'Fisher & Paykel', 'Any other Brands'
@@ -92,6 +78,8 @@ const WashingRepairSG = () => {
           <div className="flex space-x-2">
             <a 
               href={`tel:+6585301773`} 
+                aria-label="phone"
+
               className="flex-1 bg-blue-700 hover:bg-blue-800 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
             >
               <Phone className="h-4 w-4" />
@@ -100,9 +88,10 @@ const WashingRepairSG = () => {
             <a 
               href={whatsappLink} 
               target="_blank" 
+              aria-label="whatsapp"
               rel="noopener noreferrer" 
               onClick={handleCallClick}
-              className="flex-1 bg-green-600 hover:bg-green-700 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
+              className="flex-1 bg-green-700 hover:bg-green-400 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
             >
               <MessageCircle className="h-4 w-4" />
               <span className="font-semibold">WhatsApp</span>
@@ -128,11 +117,11 @@ const WashingRepairSG = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
-              <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
-              <a href="#brands" className="text-gray-700 hover:text-blue-600 transition-colors">Brands</a>
-              <a href="#why-us" className="text-gray-700 hover:text-blue-600 transition-colors">Why Us</a>
-              <a href="#faq" className="text-gray-700 hover:text-blue-600 transition-colors">FAQ</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+              <a href="#services"   aria-label="Go to slide 1" className="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+              <a href="#brands"   aria-label="Go to slide 2" className="text-gray-700 hover:text-blue-600 transition-colors">Brands</a>
+              <a href="#why-us"   aria-label="Go to slide 3" className="text-gray-700 hover:text-blue-600 transition-colors">Why Us</a>
+              <a href="#faq"   aria-label="Go to slide 4" className="text-gray-700 hover:text-blue-600 transition-colors">FAQ</a>
+              <a href="#contact"   aria-label="Go to slide 5" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
             </nav>
 
             {/* Contact Buttons */}
@@ -141,7 +130,7 @@ const WashingRepairSG = () => {
                 <Phone className="h-4 w-4" />
                 <span>Call Now</span>
               </a>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-green-700 transition-colors">
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-green-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-green-400 transition-colors">
                 <MessageCircle className="h-4 w-4" />
                 <span>WhatsApp</span>
               </a>
@@ -149,7 +138,8 @@ const WashingRepairSG = () => {
 
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden"
+              className="md:hidden" 
+              aria-label="Open navigation menu"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -171,7 +161,7 @@ const WashingRepairSG = () => {
                   <Phone className="h-4 w-4" />
                   <span>Call</span>
                 </a>
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 flex-1 justify-center">
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-green-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 flex-1 justify-center">
                   <MessageCircle className="h-4 w-4" />
                   <span>WhatsApp</span>
                 </a>
@@ -472,8 +462,8 @@ const WashingRepairSG = () => {
             </div>
             <h3 className="text-xl font-bold">WashingRepair SG</h3>
           </div>
-          <p className="text-gray-400 mb-4">Professional Washing Machine Repair Service in Singapore</p>
-          <p className="text-sm text-gray-500">© 2025 WashingRepair SG. All rights reserved. | Licensed & Insured</p>
+          <p className="text-gray-300 mb-4">Professional Washing Machine Repair Service in Singapore</p>
+          <p className="text-sm text-gray-200">© 2025 WashingRepair SG. All rights reserved. | Licensed & Insured</p>
         </div>
       </footer>
 
@@ -486,7 +476,7 @@ const WashingRepairSG = () => {
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+          className="bg-green-700 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
           title="Chat with us on WhatsApp"
         >
           <MessageCircle className="h-6 w-6" />
