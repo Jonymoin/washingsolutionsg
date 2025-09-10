@@ -67,7 +67,11 @@ const WashingRepairSG = () => {
   ];
 
   const whatsappLink = `https://wa.me/+6585301773?text=Hello%20WashingRepair%20SG,%20I%20need%20washing%20machine%20service.`;
-
+  const handleClick = () => {
+    if (typeof window.gtag_report_conversion === "function") {
+      window.gtag_report_conversion();
+    }
+  };
   return (
     <div className="min-h-screen bg-white">
       {/* Mobile Top Action Bar */}
@@ -77,7 +81,7 @@ const WashingRepairSG = () => {
             <a 
               href={`tel:+6585301773`} 
                 aria-label="phone"
-
+               onClick={handleClick}
               className="flex-1 bg-blue-700 hover:bg-blue-800 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
             >
               <Phone className="h-4 w-4" />
