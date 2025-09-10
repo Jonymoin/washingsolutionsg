@@ -187,7 +187,7 @@ const WashingMachineService = () => {
   onClick={() => {
     if (typeof gtag !== "undefined") {
       gtag("event", "conversion", {
-        send_to: "AW-17526097727/0fozCKCe0JIbEL-OjKVB",
+        send_to: "AW-17526097727/fFJECJmJ_JYbELOfsKhB",
         value: 1.0,
         currency: "SGD",
       });
