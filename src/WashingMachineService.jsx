@@ -73,7 +73,7 @@ const WashingMachineService = () => {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
             <Wrench className="w-12 h-12 text-blue-600 mr-3" />
-            <h1 className="text-4xl font-bold text-gray-800"> WashingRepair SG</h1>
+            <h1 className="text-4xl font-bold text-gray-800"> WashingSolution SG</h1>
           </div>
           <p className="text-xl text-gray-600 mb-6">Professional • Affordable • Reliable Service</p>
           
@@ -121,29 +121,7 @@ const WashingMachineService = () => {
               </div>
             </div>
             
-            <div className="bg-blue-50 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Pricing Factors:</h3>
-              <div className="space-y-3 text-gray-700">
-                <div className="flex items-start">
-                  <AlertCircle className="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <strong>Complexity of Issue:</strong> Simple fixes vs. major repairs
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <AlertCircle className="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <strong>Machine Condition:</strong> Age and overall state of appliance
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <AlertCircle className="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <strong>Parts Replacement:</strong> If genuine parts are needed (quoted separately)
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
 
           <div className="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">

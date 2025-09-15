@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, MessageCircle, Wrench, Clock, Shield, Star, CheckCircle, Menu, X, MapPin, Mail } from 'lucide-react';
+import WashingMachineService from './WashingMachineService';
 
 const WashingRepairSG = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -66,7 +67,7 @@ const WashingRepairSG = () => {
     }
   ];
 
-  const whatsappLink = `https://wa.me/+6585301773?text=Hello%20WashingRepair%20SG,%20I%20need%20washing%20machine%20service.`;
+  const whatsappLink = `https://wa.me/+6585301773?text=Hello%20WashingSolution%20SG,%20I%20need%20washing%20machine%20service.`;
   const handleClick = () => {
     if (typeof window.gtag_report_conversion === "function") {
       window.gtag_report_conversion();
@@ -112,7 +113,7 @@ const WashingRepairSG = () => {
                 <img src="/logo.webp" alt="" className='w-12'/>
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-blue-600">WashingRepair SG</h1>
+                <h1 className="text-2xl font-bold text-blue-600">WashingSolution SG</h1>
                 <p className="text-sm text-gray-600">Professional Washing Machine Service</p>
               </div>
             </div>
@@ -193,7 +194,7 @@ const WashingRepairSG = () => {
          
         </div>
       </section>
-       
+       <WashingMachineService />
       {/* Services Section */}
       <section id="services" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -242,7 +243,7 @@ const WashingRepairSG = () => {
       {/* Why Choose Us Section */}
       <section id="why-us" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Why Choose WashingRepair SG?</h2>
+          <h2 className="text-4xl font-bold text-center mb-12">Why Choose WashingSolution SG?</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div className="space-y-6">
@@ -462,10 +463,10 @@ const WashingRepairSG = () => {
             <div className="bg-blue-600 p-2 rounded-lg">
               <Wrench className="h-6 w-6 text-white" />
             </div>
-            <h3 className="text-xl font-bold">WashingRepair SG</h3>
+            <h3 className="text-xl font-bold">WashingSolution SG</h3>
           </div>
           <p className="text-gray-300 mb-4">Professional Washing Machine Repair Service in Singapore</p>
-          <p className="text-sm text-gray-200">© 2025 WashingRepair SG. All rights reserved. | Licensed & Insured</p>
+          <p className="text-sm text-gray-200">© 2025 WashingSolution SG. All rights reserved. | Licensed & Insured</p>
         </div>
       </footer>
 
