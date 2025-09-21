@@ -74,16 +74,16 @@ const WashingRepairSG = () => {
     }
   };
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-900">
       {/* Mobile Top Action Bar */}
-      <div className="md:hidden bg-blue-600 text-white py-2 sticky top-0 z-50">
+      <div className="md:hidden bg-gray-800 text-white py-2 sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex space-x-2">
             <a 
               href={`tel:+6585301773`} 
                 aria-label="phone"
                onClick={handleClick}
-              className="flex-1 bg-blue-700 hover:bg-blue-800 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
+              className="flex-1 bg-gray-700 hover:bg-gray-600 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
             >
               <Phone className="h-4 w-4" />
               <span className="font-semibold">Call Now</span>
@@ -104,7 +104,7 @@ const WashingRepairSG = () => {
       </div>
 
       {/* Header */}
-      <header className="bg-white shadow-lg sticky top-0 md:top-0 z-40 md:z-50">
+      <header className="bg-gray-800 shadow-lg sticky top-0 md:top-0 z-40 md:z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -113,18 +113,18 @@ const WashingRepairSG = () => {
                 <img src="/logo.webp" alt="" className='w-12'/>
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-blue-600">WashingSolution SG</h1>
-                <p className="text-sm text-gray-600">Professional Washing Machine Service</p>
+                <h1 className="text-2xl font-bold text-blue-400">WashingSolution SG</h1>
+                <p className="text-sm text-gray-300">Professional Washing Machine Service</p>
               </div>
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
-              <a href="#services"   aria-label="Go to slide 1" className="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
-              <a href="#brands"   aria-label="Go to slide 2" className="text-gray-700 hover:text-blue-600 transition-colors">Brands</a>
-              <a href="#why-us"   aria-label="Go to slide 3" className="text-gray-700 hover:text-blue-600 transition-colors">Why Us</a>
-              <a href="#faq"   aria-label="Go to slide 4" className="text-gray-700 hover:text-blue-600 transition-colors">FAQ</a>
-              <a href="#contact"   aria-label="Go to slide 5" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+              <a href="#services"   aria-label="Go to slide 1" className="text-gray-300 hover:text-blue-400 transition-colors">Services</a>
+              <a href="#brands"   aria-label="Go to slide 2" className="text-gray-300 hover:text-blue-400 transition-colors">Brands</a>
+              <a href="#why-us"   aria-label="Go to slide 3" className="text-gray-300 hover:text-blue-400 transition-colors">Why Us</a>
+              <a href="#faq"   aria-label="Go to slide 4" className="text-gray-300 hover:text-blue-400 transition-colors">FAQ</a>
+              <a href="#contact"   aria-label="Go to slide 5" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</a>
             </nav>
 
             {/* Contact Buttons */}
@@ -141,7 +141,7 @@ const WashingRepairSG = () => {
 
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden" 
+              className="md:hidden text-gray-300" 
               aria-label="Open navigation menu"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -153,11 +153,11 @@ const WashingRepairSG = () => {
           {isMenuOpen && (
             <div className="md:hidden mt-4 pb-4">
               <nav className="flex flex-col space-y-4">
-                <a href="#services" className="text-gray-700 hover:text-blue-600">Services</a>
-                <a href="#brands" className="text-gray-700 hover:text-blue-600">Brands</a>
-                <a href="#why-us" className="text-gray-700 hover:text-blue-600">Why Us</a>
-                <a href="#faq" className="text-gray-700 hover:text-blue-600">FAQ</a>
-                <a href="#contact" className="text-gray-700 hover:text-blue-600">Contact</a>
+                <a href="#services" className="text-gray-300 hover:text-blue-400">Services</a>
+                <a href="#brands" className="text-gray-300 hover:text-blue-400">Brands</a>
+                <a href="#why-us" className="text-gray-300 hover:text-blue-400">Why Us</a>
+                <a href="#faq" className="text-gray-300 hover:text-blue-400">FAQ</a>
+                <a href="#contact" className="text-gray-300 hover:text-blue-400">Contact</a>
               </nav>
               <div className="flex space-x-3 mt-4">
                 <a href={`tel:+6585301773`} className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 flex-1 justify-center">
@@ -175,12 +175,12 @@ const WashingRepairSG = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Singapore's #1 Washing Machine Repair Service</h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">Fast, reliable, and affordable washing machine repair service across Singapore. Same-day service available.</p>
+          <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-300">Fast, reliable, and affordable washing machine repair service across Singapore. Same-day service available.</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href={`tel:+6585301773`} className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
+            <a href={`tel:+6585301773`} className="bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
               <Phone className="h-5 w-5" />
               <span>+65 8530 1773</span>
             </a>
@@ -196,44 +196,44 @@ const WashingRepairSG = () => {
       </section>
        <WashingMachineService />
       {/* Services Section */}
-      <section id="services" className="py-16 bg-gray-50">
+      <section id="services" className="py-16 bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-white">Our Services</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Wrench className="h-8 w-8 text-blue-600" />
+            <div className="bg-gray-700 p-8 rounded-lg shadow-lg text-center">
+              <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Wrench className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4">Repair & Maintenance</h3>
-              <p className="text-gray-600">Expert diagnosis and repair of all washing machine issues including motor problems, drainage issues, and electrical faults.</p>
+              <h3 className="text-xl font-bold mb-4 text-white">Repair & Maintenance</h3>
+              <p className="text-gray-300">Expert diagnosis and repair of all washing machine issues including motor problems, drainage issues, and electrical faults.</p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-green-600" />
+            <div className="bg-gray-700 p-8 rounded-lg shadow-lg text-center">
+              <div className="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4">Same-Day Service</h3>
-              <p className="text-gray-600">Quick response time with same-day service available. We understand the urgency of getting your washing machine working again.</p>
+              <h3 className="text-xl font-bold mb-4 text-white">Same-Day Service</h3>
+              <p className="text-gray-300">Quick response time with same-day service available. We understand the urgency of getting your washing machine working again.</p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-purple-600" />
+            <div className="bg-gray-700 p-8 rounded-lg shadow-lg text-center">
+              <div className="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4">Expert Technician</h3>
-              <p className="text-gray-600">All repairs done by our expert technicians</p>
+              <h3 className="text-xl font-bold mb-4 text-white">Expert Technician</h3>
+              <p className="text-gray-300">All repairs done by our expert technicians</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Brands Section */}
-      <section id="brands" className="py-16">
+      <section id="brands" className="py-16 bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Brands We Service</h2>
-          <p className="text-center text-gray-600 mb-8">Our certified technicians are experienced with all major washing machine brands</p>
+          <h2 className="text-4xl font-bold text-center mb-12 text-white">Brands We Service</h2>
+          <p className="text-center text-gray-300 mb-8">Our certified technicians are experienced with all major washing machine brands</p>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {brands.map((brand, index) => (
-              <div key={index} className="bg-white border-2 border-gray-200 rounded-lg p-4 text-center hover:border-blue-500 transition-colors">
-                <h3 className="font-bold text-gray-800">{brand}</h3>
+              <div key={index} className="bg-gray-800 border-2 border-gray-600 rounded-lg p-4 text-center hover:border-blue-400 transition-colors">
+                <h3 className="font-bold text-gray-200">{brand}</h3>
               </div>
             ))}
           </div>
@@ -241,46 +241,46 @@ const WashingRepairSG = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section id="why-us" className="py-16 bg-gray-50">
+      <section id="why-us" className="py-16 bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Why Choose WashingSolution SG?</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-white">Why Choose WashingSolution SG?</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-bold text-lg mb-2">5+ Years Experience</h3>
-                    <p className="text-gray-600">Our team has over 5 years of combined experience in washing machine repair and maintenance across Singapore.</p>
+                    <h3 className="font-bold text-lg mb-2 text-white">5+ Years Experience</h3>
+                    <p className="text-gray-300">Our team has over 5 years of combined experience in washing machine repair and maintenance across Singapore.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-bold text-lg mb-2">Transparent Pricing</h3>
-                    <p className="text-gray-600">No hidden fees or surprise charges. We provide upfront pricing and get your approval before starting any work.</p>
+                    <h3 className="font-bold text-lg mb-2 text-white">Transparent Pricing</h3>
+                    <p className="text-gray-300">No hidden fees or surprise charges. We provide upfront pricing and get your approval before starting any work.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-bold text-lg mb-2">Genuine Parts Only</h3>
-                    <p className="text-gray-600">We use only original manufacturer parts to ensure the longevity and reliability of your washing machine.</p>
+                    <h3 className="font-bold text-lg mb-2 text-white">Genuine Parts Only</h3>
+                    <p className="text-gray-300">We use only original manufacturer parts to ensure the longevity and reliability of your washing machine.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-bold text-lg mb-2">Island-Wide Coverage</h3>
-                    <p className="text-gray-600">We service all areas in Singapore with fast response times and professional service.</p>
+                    <h3 className="font-bold text-lg mb-2 text-white">Island-Wide Coverage</h3>
+                    <p className="text-gray-300">We service all areas in Singapore with fast response times and professional service.</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg">
+            <div className="bg-gray-700 p-8 rounded-lg shadow-lg">
               <div className="text-center">
                 <div className="flex items-center justify-center mb-4">
-                  <div className="bg-white p-2 rounded-lg shadow-sm mr-3">
+                  <div className="bg-gray-600 p-2 rounded-lg shadow-sm mr-3">
                     <svg className="h-8 w-8" viewBox="0 0 24 24">
                       <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                       <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -294,16 +294,16 @@ const WashingRepairSG = () => {
                     ))}
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-2">4.9/5 Google Rating</h3>
-                <p className="text-gray-600 mb-6">Based on 500+ verified Google reviews</p>
-                <div className="bg-blue-50 p-6 rounded-lg min-h-[120px] flex flex-col justify-center">
+                <h3 className="text-2xl font-bold mb-2 text-white">4.9/5 Google Rating</h3>
+                <p className="text-gray-300 mb-6">Based on 500+ verified Google reviews</p>
+                <div className="bg-gray-600 p-6 rounded-lg min-h-[120px] flex flex-col justify-center">
                   <div className="flex text-yellow-500 justify-center mb-3">
                     {[...Array(reviews[currentReview].rating)].map((_, i) => (
                       <Star key={i} className="h-4 w-4 fill-current" />
                     ))}
                   </div>
-                  <p className="text-sm italic text-gray-700 mb-3">"{reviews[currentReview].text}"</p>
-                  <p className="text-sm font-bold">- {reviews[currentReview].author}, {reviews[currentReview].location}</p>
+                  <p className="text-sm italic text-gray-200 mb-3">"{reviews[currentReview].text}"</p>
+                  <p className="text-sm font-bold text-white">- {reviews[currentReview].author}, {reviews[currentReview].location}</p>
                 </div>
                 <div className="flex justify-center mt-4 space-x-2">
                   {reviews.map((_, index) => (
@@ -311,7 +311,7 @@ const WashingRepairSG = () => {
                       key={index}
                       onClick={() => setCurrentReview(index)}
                       className={`w-2 h-2 rounded-full transition-colors ${
-                        index === currentReview ? 'bg-blue-600' : 'bg-gray-300'
+                        index === currentReview ? 'bg-blue-400' : 'bg-gray-500'
                       }`}
                     />
                   ))}
@@ -348,26 +348,26 @@ const WashingRepairSG = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-16">
+      <section id="faq" className="py-16 bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-white">Frequently Asked Questions</h2>
           <div className="max-w-3xl mx-auto">
             {faqs.map((faq, index) => (
               <div key={index} className="mb-4">
                 <button
-                  className="w-full text-left bg-white border border-gray-200 rounded-lg p-4 hover:bg-gray-50 focus:outline-none focus:border-blue-500"
+                  className="w-full text-left bg-gray-800 border border-gray-600 rounded-lg p-4 hover:bg-gray-700 focus:outline-none focus:border-blue-400"
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                 >
                   <div className="flex justify-between items-center">
-                    <h3 className="font-bold text-lg pr-8">{faq.question}</h3>
+                    <h3 className="font-bold text-lg pr-8 text-white">{faq.question}</h3>
                     <span className="text-2xl text-gray-400">
                       {openFaq === index ? '−' : '+'}
                     </span>
                   </div>
                 </button>
                 {openFaq === index && (
-                  <div className="bg-gray-50 border-l border-r border-b border-gray-200 rounded-b-lg p-4">
-                    <p className="text-gray-700">{faq.answer}</p>
+                  <div className="bg-gray-700 border-l border-r border-b border-gray-600 rounded-b-lg p-4">
+                    <p className="text-gray-300">{faq.answer}</p>
                   </div>
                 )}
               </div>
@@ -391,35 +391,35 @@ const WashingRepairSG = () => {
                   <Phone className="h-6 w-6 text-blue-400" />
                   <div>
                     <p className="font-bold">Phone</p>
-                    <p>+6585301773</p>
+                    <p className="text-gray-300">+6585301773</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
                   <MessageCircle className="h-6 w-6 text-green-400" />
                   <div>
                     <p className="font-bold">WhatsApp</p>
-                    <p>+6585301773</p>
+                    <p className="text-gray-300">+6585301773</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
                   <Mail className="h-6 w-6 text-red-400" />
                   <div>
                     <p className="font-bold">Email</p>
-                    <p>WashingRepairsg@gmail.com</p>
+                    <p className="text-gray-300">WashingRepairsg@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
                   <MapPin className="h-6 w-6 text-purple-400" />
                   <div>
                     <p className="font-bold">Service Area</p>
-                    <p>All areas in Singapore</p>
+                    <p className="text-gray-300">All areas in Singapore</p>
                   </div>
                 </div>
               </div>
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-6">Business Hours</h3>
-              <div className="space-y-2">
+              <div className="space-y-2 text-gray-300">
                 <div className="flex justify-between">
                   <span>Monday - Friday:</span>
                   <span>6:00 AM - 11:00 PM</span>
@@ -466,7 +466,7 @@ const WashingRepairSG = () => {
             <h3 className="text-xl font-bold">WashingSolution SG</h3>
           </div>
           <p className="text-gray-300 mb-4">Professional Washing Machine Repair Service in Singapore</p>
-          <p className="text-sm text-gray-200">© 2025 WashingSolution SG. All rights reserved. | Licensed & Insured</p>
+          <p className="text-sm text-gray-400">© 2025 WashingSolution SG. All rights reserved. | Licensed & Insured</p>
         </div>
       </footer>
 
