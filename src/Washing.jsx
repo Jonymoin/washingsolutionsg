@@ -83,7 +83,7 @@ const WashingRepairSG = () => {
               href={`tel:+6585301773`} 
                 aria-label="phone"
                onClick={handleClick}
-              className="flex-1 bg-gray-700 hover:bg-gray-600 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
+              className="flex-1 bg-amber-500 hover:bg-gray-600 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
             >
               <Phone className="h-4 w-4" />
               <span className="font-semibold">Call Now</span>
