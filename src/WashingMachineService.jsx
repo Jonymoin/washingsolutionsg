@@ -161,7 +161,7 @@ const WashingMachineService = () => {
             <p className="mb-6">Our experienced technicians can diagnose and fix any washing machine issue!</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-  href="tel:+6585301773"
+  href="tel:+6584130016"
   onClick={() => {
     if (typeof gtag !== "undefined") {
       gtag("event", "conversion", {
@@ -178,7 +178,7 @@ const WashingMachineService = () => {
 </a>
 
 <a
-  href="https://wa.me/6585301773"
+  href="https://wa.me/6584130016"
   target="_blank"
   rel="noopener noreferrer"
   className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors flex items-center justify-center"
