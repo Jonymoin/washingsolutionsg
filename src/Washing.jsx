@@ -67,7 +67,7 @@ const WashingRepairSG = () => {
     }
   ];
 
-  const whatsappLink = `https://wa.me/+6584130016?text=Hello%20Washingrepair%20SG,%20I%20need%20washing%20machine%20service.`;
+  const whatsappLink = `https://wa.me/+6585301773?text=Hello%20WashingSolution%20SG,%20I%20need%20washing%20machine%20service.`;
   const handleClick = () => {
     if (typeof window.gtag_report_conversion === "function") {
       window.gtag_report_conversion();
@@ -80,7 +80,7 @@ const WashingRepairSG = () => {
         <div className="container mx-auto px-4">
           <div className="flex space-x-2">
             <a 
-              href={`tel:+6584130016`} 
+              href={`tel:+6585301773`} 
                 aria-label="phone"
                onClick={handleClick}
               className="flex-1 bg-amber-500 hover:bg-gray-600 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
@@ -129,7 +129,7 @@ const WashingRepairSG = () => {
 
             {/* Contact Buttons */}
             <div className="hidden md:flex space-x-3">
-              <a href={`tel:+6584130016`} onClick={handleClick}  className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-700 transition-colors">
+              <a href={`tel:+6585301773`} onClick={handleClick}  className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-700 transition-colors">
                 <Phone className="h-4 w-4" />
                 <span>Call Now</span>
               </a>
@@ -160,7 +160,7 @@ const WashingRepairSG = () => {
                 <a href="#contact" className="text-gray-300 hover:text-blue-400">Contact</a>
               </nav>
               <div className="flex space-x-3 mt-4">
-                <a href={`tel:+6584130016`} onClick={handleClick} className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 flex-1 justify-center">
+                <a href={`tel:+6585301773`} onClick={handleClick} className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 flex-1 justify-center">
                   <Phone className="h-4 w-4" />
                   <span>Call</span>
                 </a>
@@ -180,7 +180,7 @@ const WashingRepairSG = () => {
           <h1 className="text-5xl font-bold mb-6">Singapore's #1 Washing Machine Repair Service</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-300">Fast, reliable, and affordable washing machine repair service across Singapore. Same-day service available.</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href={`tel:+6584130016`} onClick={handleClick} className="bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
+            <a href={`tel:+6585301773`} onClick={handleClick} className="bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
               <Phone className="h-5 w-5" />
               <span>+65 8530 1773</span>
             </a>
@@ -391,14 +391,14 @@ const WashingRepairSG = () => {
                   <Phone className="h-6 w-6 text-blue-400" />
                   <div>
                     <p className="font-bold">Phone</p>
-                    <p className="text-gray-300">+6584130016</p>
+                    <p className="text-gray-300">+6585301773</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
                   <MessageCircle className="h-6 w-6 text-green-400" />
                   <div>
                     <p className="font-bold">WhatsApp</p>
-                    <p className="text-gray-300">+6584130016</p>
+                    <p className="text-gray-300">+6585301773</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -441,7 +441,7 @@ const WashingRepairSG = () => {
                 <h4 className="font-bold text-lg mb-4">Ready to Fix Your Washing Machine?</h4>
                 <p className="mb-4">Don't let a broken washing machine disrupt your daily routine. Contact us now for fast, professional service!</p>
                 <div className="flex space-x-4">
-                  <a href={`tel:+6584130016`} onClick={handleClick} className="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors flex items-center space-x-2">
+                  <a href={`tel:+6585301773`} onClick={handleClick} className="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors flex items-center space-x-2">
                     <Phone className="h-4 w-4" />
                     <span>Call Now</span>
                   </a>
