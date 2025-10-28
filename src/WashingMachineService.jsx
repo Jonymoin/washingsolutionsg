@@ -4,64 +4,71 @@ import { CheckCircle, Wrench, Clock, Shield, Phone, Star, AlertCircle } from 'lu
 const WashingMachineService = () => {
   const [activeTab, setActiveTab] = useState('problems');
 
-  const commonProblems = [
-    {
-      icon: '🌊',
-      title: 'Water Not Filling or Draining',
-      description: 'Blocked filters, faulty valves, or drainage issues preventing proper water flow.'
-    },
-    {
-      icon: '🔄',
-      title: 'Machine Not Spinning',
-      description: 'Motor problems, belt issues, or lid switch malfunctions affecting spin cycle.'
-    },
-    {
-      icon: '🔊',
-      title: 'Excessive Noise & Vibration',
-      description: 'Unbalanced loads, worn bearings, or loose parts causing loud operation.'
-    },
-    {
-      icon: '⚡',
-      title: 'Electrical Issues',
-      description: 'Power problems, control panel failures, or wiring issues.'
-    },
-    {
-      icon: '🚪',
-      title: 'Door/Lid Problems',
-      description: 'Faulty latches, broken hinges, or door seal issues.'
-    },
-    {
-      icon: '🧼',
-      title: 'Detergent Dispenser Issues',
-      description: 'Clogged dispensers or improper soap distribution.'
-    },
-    {
-      icon: '💧',
-      title: 'Water Leakage',
-      description: 'Damaged hoses, worn seals, or loose connections causing water leaks.'
-    },
-    {
-      icon: '❄️',
-      title: 'Temperature Control Problems',
-      description: 'Faulty heating elements or thermostat issues affecting water temperature.'
-    },
-    {
-      icon: '⏱️',
-      title: 'Timer & Control Issues',
-      description: 'Malfunctioning timers or electronic control board problems.'
-    },
-    {
-      icon: '🧽',
-      title: 'Poor Cleaning Performance',
-      description: 'Inadequate washing due to mechanical or water pressure issues.'
-    }
-  ];
+ const commonProblems = [
+  {
+    icon: '🌊',
+    title: 'Water Not Filling or Draining',
+    description: 'Blocked filters, faulty valves, or drainage issues preventing proper water flow.'
+  },
+  {
+    icon: '💡',
+    title: 'Error Code Showing on Display',
+    description: 'Indicates specific faults like motor errors, sensor failures, or unbalanced loads. Check the user manual for code meanings.'
+  },
+  {
+    icon: '🔄',
+    title: 'Machine Not Spinning',
+    description: 'Motor problems, belt issues, or lid switch malfunctions affecting spin cycle.'
+  },
+  {
+    icon: '🔊',
+    title: 'Excessive Noise & Vibration',
+    description: 'Unbalanced loads, worn bearings, or loose parts causing loud operation.'
+  },
+  {
+    icon: '⚡',
+    title: 'Electrical Issues',
+    description: 'Power problems, control panel failures, or wiring issues.'
+  },
+  {
+    icon: '🚪',
+    title: 'Door/Lid Problems',
+    description: 'Faulty latches, broken hinges, or door seal issues.'
+  },
+  {
+    icon: '🧼',
+    title: 'Detergent Dispenser Issues',
+    description: 'Clogged dispensers or improper soap distribution.'
+  },
+  {
+    icon: '💧',
+    title: 'Water Leakage',
+    description: 'Damaged hoses, worn seals, or loose connections causing water leaks.'
+  },
+  {
+    icon: '❄️',
+    title: 'Temperature Control Problems',
+    description: 'Faulty heating elements or thermostat issues affecting water temperature.'
+  },
+  {
+    icon: '⏱️',
+    title: 'Timer & Control Issues',
+    description: 'Malfunctioning timers or electronic control board problems.'
+  },
+  {
+    icon: '🧽',
+    title: 'Poor Cleaning Performance',
+    description: 'Inadequate washing due to mechanical or water pressure issues.'
+  }
+  
+];
+
 
   const pricingFeatures = [
     'Transparent pricing discussed before work begins',
     'No hidden fees or surprise charges',
     'Free diagnostic assessment',
-    'Parts replacement quoted separately',
+    'Parts replacement included',
     'Service warranty included',
     'Same-day service available'
   ];
@@ -179,6 +186,15 @@ const WashingMachineService = () => {
 
 <a
   href="https://wa.me/6585301773"
+  onClick={() => {
+    if (typeof gtag !== "undefined") {
+      gtag("event", "conversion", {
+        send_to: "AW-17526097727/fFJECJmJ_JYbELOfsKhB",
+        value: 1.0,
+        currency: "SGD",
+      });
+    }
+  }}
   target="_blank"
   rel="noopener noreferrer"
   className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors flex items-center justify-center"

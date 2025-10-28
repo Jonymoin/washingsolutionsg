@@ -109,7 +109,7 @@ const WashingRepairSG = () => {
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="bg-blue-600 p-1 rounded-lg">
+              <div className="bg-gray-600 p-1 rounded-lg">
                 <img src="/logo.webp" alt="" className='w-12'/>
               </div>
               <div>
