@@ -175,10 +175,10 @@ const WashingRepairSG = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-20">
+      <section className="bg-gradient-to-r from-gray-800 to-gray-900 text-black py-20 bg-[url('/washing1.webp')] bg-cover bg-center">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Singapore's #1 Washing Machine Repair Service</h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-300">Fast, reliable, and affordable washing machine repair service across Singapore. Same-day service available.</p>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">Fast, reliable, and affordable washing machine repair service across Singapore. Same-day service available.</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <a href={`tel:+6585301773`} onClick={handleClick} className="bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
               <Phone className="h-5 w-5" />
