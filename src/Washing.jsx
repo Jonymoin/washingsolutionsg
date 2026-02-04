@@ -175,25 +175,45 @@ const WashingRepairSG = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-800 to-gray-900 text-black py-20 bg-[url('/washing1.webp')] bg-cover bg-center">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">Singapore's #1 Washing Machine Repair Service</h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">Fast, reliable, and affordable washing machine repair service across Singapore. Same-day service available.</p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href={`tel:+6585301773`} onClick={handleClick} className="bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
-              <Phone className="h-5 w-5" />
-              <span>+65 8530 1773</span>
-            </a>
-            <a href={whatsappLink} onClick={handleClick} target="_blank" rel="noopener noreferrer" className="bg-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-700 transition-colors flex items-center justify-center space-x-2">
-              <MessageCircle className="h-5 w-5" />
-              <span>WhatsApp Us</span>
-            </a>
-          </div>
-        </div>
-        <div className='mt-14'>
-         
-        </div>
-      </section>
+   <section className="relative py-20 bg-[url('/washing1.webp')] bg-cover bg-center">
+
+  {/* Blur overlay */}
+  <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+  {/* Content */}
+  <div className="relative container mx-auto px-4 text-center text-white">
+    <h1 className="text-5xl font-bold mb-6">
+      Singapore's #1 Washing Machine Repair Service
+    </h1>
+
+    <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-200">
+      Fast, reliable, and affordable washing machine repair service across Singapore. Same-day service available.
+    </p>
+
+    <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+      <a
+        href="tel:+6585301773"
+        onClick={handleClick}
+        className="bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2"
+      >
+        <Phone className="h-5 w-5" />
+        <span>+65 8530 1773</span>
+      </a>
+
+      <a
+        href={whatsappLink}
+        onClick={handleClick}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-700 transition-colors flex items-center justify-center space-x-2"
+      >
+        <MessageCircle className="h-5 w-5" />
+        <span>WhatsApp Us</span>
+      </a>
+    </div>
+  </div>
+</section>
+
        <WashingMachineService />
       {/* Services Section */}
       <section id="services" className="py-16 bg-gray-800">
