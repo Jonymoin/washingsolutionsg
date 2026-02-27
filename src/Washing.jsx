@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Phone, MessageCircle, Wrench, Clock, Shield, Star, CheckCircle, Menu, X, MapPin, Mail } from 'lucide-react';
 import WashingMachineService from './WashingMachineService';
 import HeroSection from './HeroSection';
+import WashingSolutionBanner from './WashingSolutionBanner';
 
 const WashingRepairSG = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -177,7 +178,7 @@ const WashingRepairSG = () => {
 
       {/* Hero Section */}
        <HeroSection />
-
+      <WashingSolutionBanner />
        <WashingMachineService />
       {/* Services Section */}
       <section id="services" className="py-16 bg-gray-800">

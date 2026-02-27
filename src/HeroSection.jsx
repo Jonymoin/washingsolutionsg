@@ -16,7 +16,7 @@ const HeroSection = () => {
       subtitle: 'Quick response time with emergency repair service - We come to you!'
     },
     {
-      image: '/washingsolution2.webp',
+      image: '/washingsolution5.webp',
       title: 'Affordable & Transparent Pricing',
       subtitle: 'No hidden charges. Free diagnosis with upfront quotation before any work'
     },
