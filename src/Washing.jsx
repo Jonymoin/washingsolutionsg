@@ -85,7 +85,7 @@ const WashingRepairSG = () => {
               href={`tel:+6585301773`} 
                 aria-label="phone"
                onClick={handleClick}
-              className="flex-1 bg-amber-500 hover:bg-gray-600 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
+              className="flex-1 bg-black hover:bg-gray-600 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
             >
               <Phone className="h-4 w-4" />
               <span className="font-semibold">Call Now</span>
@@ -111,11 +111,11 @@ const WashingRepairSG = () => {
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="bg-gray-600 p-1 rounded-lg">
+              <div className="">
                 <img src="/logo.webp" alt="" className='w-12'/>
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-blue-400">WashingSolution SG</h1>
+                <h1 className="text-2xl font-bold text-red-600">WashingSolution SG</h1>
                 <p className="text-sm text-gray-300">Professional Washing Machine Service</p>
               </div>
             </div>

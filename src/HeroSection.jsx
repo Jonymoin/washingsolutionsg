@@ -7,12 +7,12 @@ const HeroSection = () => {
   const slides = [
     {
       image: '/washingsolution.webp',
-      title: 'Expert Washing Machine Repair',
+      title: 'Washing Machine Repair Service',
       subtitle: 'Professional technicians ready to fix all brands and models across Singapore'
     },
     {
       image: '/washingsolution1.webp',
-      title: 'Same-Day Service Available',
+      title: 'Expert Service Available',
       subtitle: 'Quick response time with emergency repair service - We come to you!'
     },
     {
@@ -22,7 +22,7 @@ const HeroSection = () => {
     },
     {
       image: '/washingsolution3.webp',
-      title: '100% Satisfaction Guaranteed',
+      title: 'Satisfaction Guaranteed',
       subtitle: 'Quality repairs with warranty. Trusted by thousands of happy customers'
     }
   ];
