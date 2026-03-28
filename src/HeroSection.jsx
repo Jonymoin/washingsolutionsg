@@ -27,81 +27,80 @@ const HeroSection = () => {
     }
   ];
 
-  const handleClick = () => {
-    console.log('Button clicked');
-  };
-
-  const whatsappLink = `https://wa.me/6585301773?text=${encodeURIComponent('Hello! I need help with washing machine repair.')}`;
-
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // 5 seconds per slide
-
+      setCurrentSlide(prev => (prev + 1) % slides.length);
+    }, 5000);
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, []);
 
   return (
     <section className="relative h-screen overflow-hidden">
-      {/* Slides */}
-      {slides.map((slide, index) => (
+
+      {/* LCP IMAGE AS IMG FOR FASTER LOAD */}
+      <img
+        src={slides[0].image}
+        alt=""
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${currentSlide === 0 ? 'opacity-100' : 'opacity-0'}`}
+        fetchpriority="high"
+      />
+
+      {/* OTHER SLIDES AS BACKGROUND IMAGES (LAZY) */}
+      {slides.slice(1).map((slide, index) => (
         <div
-          key={index}
+          key={index + 1}
           className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
+            currentSlide === index + 1 ? 'opacity-100' : 'opacity-0'
           }`}
           style={{
             backgroundImage: `url(${slide.image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
-        >
-          {/* Light overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/30"></div>
-        </div>
+          loading="lazy"
+        />
       ))}
 
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/30 z-5"></div>
+
       {/* Content */}
-      <div className="relative h-full flex items-center justify-center z-10">
-        <div className="container mx-auto px-4 text-center text-white">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg transition-all duration-500">
+      <div className="relative h-full flex items-center justify-center z-10 text-center text-white">
+        <div className="container mx-auto px-4">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
             {slides[currentSlide].title}
           </h1>
-
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto drop-shadow-md transition-all duration-500">
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto drop-shadow-md">
             {slides[currentSlide].subtitle}
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <a
               href="tel:+6585301773"
-              onClick={handleClick}
-              className="bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2 shadow-lg"
+              className="bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg flex items-center shadow-lg"
             >
               <Phone className="h-5 w-5" />
               <span>+65 8530 1773</span>
             </a>
 
             <a
-              href={whatsappLink}
-              onClick={handleClick}
+              href="https://wa.me/6585301773"
               target="_blank"
-              rel="noopener noreferrer"
-              className="bg-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-700 transition-colors flex items-center justify-center space-x-2 shadow-lg"
+              className="bg-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center shadow-lg"
             >
               <MessageCircle className="h-5 w-5" />
               <span>WhatsApp Us</span>
             </a>
           </div>
 
-          {/* Slide indicators */}
+          {/* Indicators */}
           <div className="flex justify-center space-x-2 mt-8">
-            {slides.map((_, index) => (
+            {slides.map((_, i) => (
               <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
+                key={i}
+                onClick={() => setCurrentSlide(i)}
                 className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+                  i === currentSlide ? 'bg-white w-8' : 'bg-white/50'
                 }`}
               />
             ))}

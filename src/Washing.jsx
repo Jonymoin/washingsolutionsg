@@ -390,7 +390,7 @@ const WashingRepairSG = () => {
                   <Mail className="h-6 w-6 text-red-400" />
                   <div>
                     <p className="font-bold">Email</p>
-                    <p className="text-gray-300">WashingRepairsg@gmail.com</p>
+                    <p className="text-gray-300">Washingsolutionsg@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
