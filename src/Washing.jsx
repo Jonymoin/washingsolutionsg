@@ -155,11 +155,11 @@ const WashingRepairSG = () => {
           {isMenuOpen && (
             <div className="md:hidden mt-4 pb-4">
               <nav className="flex flex-col space-y-4">
-                <a href="#services" className="text-gray-300 hover:text-blue-400">Services</a>
-                <a href="#brands" className="text-gray-300 hover:text-blue-400">Brands</a>
-                <a href="#why-us" className="text-gray-300 hover:text-blue-400">Why Us</a>
-                <a href="#faq" className="text-gray-300 hover:text-blue-400">FAQ</a>
-                <a href="#contact" className="text-gray-300 hover:text-blue-400">Contact</a>
+                <a href="#services" aria-label="Go to slide 1" className="text-gray-300 hover:text-blue-400">Services</a>
+                <a href="#brands" aria-label="Go to slide 2" className="text-gray-300 hover:text-blue-400">Brands</a>
+                <a href="#why-us" aria-label="Go to slide 3" className="text-gray-300 hover:text-blue-400">Why Us</a>
+                <a href="#faq"aria-label="Go to slide 4" className="text-gray-300 hover:text-blue-400">FAQ</a>
+                <a href="#contact" aria-label="Go to slide 5" className="text-gray-300 hover:text-blue-400">Contact</a>
               </nav>
               <div className="flex space-x-3 mt-4">
                 <a href={`tel:+6585301773`} onClick={handleClick} className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 flex-1 justify-center">
