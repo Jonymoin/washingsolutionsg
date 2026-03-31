@@ -75,23 +75,23 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <a
-              href="tel:+6585301773"
-              className="bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg flex items-center shadow-lg"
-            >
-              <Phone className="h-5 w-5" />
-              <span>+65 8530 1773</span>
-            </a>
+  <a
+    href="tel:+6585301773"
+    className="bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 shadow-lg"
+  >
+    <Phone className="h-5 w-5" />
+    <span>+65 8530 1773</span>
+  </a>
 
-            <a
-              href="https://wa.me/6585301773"
-              target="_blank"
-              className="bg-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center shadow-lg"
-            >
-              <MessageCircle className="h-5 w-5" />
-              <span>WhatsApp Us</span>
-            </a>
-          </div>
+  <a
+    href="https://wa.me/6585301773"
+    target="_blank"
+    className="bg-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 shadow-lg"
+  >
+    <MessageCircle className="h-5 w-5" />
+    <span>WhatsApp Us</span>
+  </a>
+</div>
 
           {/* Indicators */}
           <div className="flex justify-center space-x-2 mt-8">
