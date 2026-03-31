@@ -2,32 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="preload" href="/washingsolution.webp" as="image" fetchpriority="high" />
+
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>WashingSolution SG</title>
+  <meta name="description" content="Washing machine and dryer repair service in Singapore. Fast and reliable troubleshooting and installation." />
+  <link rel="canonical" href="https://washingsolutionsg.com/" />
+
+  <!-- Open Graph (SEO Boost) -->
+  <meta property="og:title" content="WashingSolution SG" />
+  <meta property="og:description" content="Fast washing machine repair in Singapore" />
+  <meta property="og:image" content="/washingsolution.webp" />
+  <meta property="og:type" content="website" />
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#111827" />
+
+  <!-- Preload Hero Image -->
+  <link 
+    rel="preload" 
+    href="/washingsolution.webp" 
+    as="image" 
+    fetchpriority="high"
+  />
+
+  <!-- Preconnect (Performance) -->
   <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link rel="preconnect" href="https://www.google-analytics.com" />
   <link rel="preconnect" href="https://www.clarity.ms" />
+
+  <!-- DNS Prefetch -->
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//www.clarity.ms">
+
+  <!-- CSS (Non-blocking) -->
   <link rel="preload" href="/assets/index-S75_i8DE.css" as="style" />
-<link
-  rel="stylesheet"
-  href="/assets/index-S75_i8DE.css"
-  media="print"
-  onload="this.media='all'"
-/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Washing machine and dryer repair service in Singapore. Fast and reliable troubleshooting and installation." />
+  <link
+    rel="stylesheet"
+    href="/assets/index-S75_i8DE.css"
+    media="print"
+    onload="this.media='all'"
+  />
+  <noscript>
+    <link rel="stylesheet" href="/assets/index-S75_i8DE.css" />
+  </noscript>
 
-  <title>WashingSolution SG</title>
+</head>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17547034192"></script>
-  <script defer>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17547034192');
+<body>
+  <div id="root"></div>
+
+  <!-- React App -->
+  <script type="module" src="/src/main.jsx"></script>
+
+  <!-- Google Analytics (Delayed Load for Performance) -->
+  <script>
+    window.addEventListener("load", function () {
+      var s = document.createElement("script");
+      s.src = "https://www.googletagmanager.com/gtag/js?id=AW-17547034192";
+      s.async = true;
+      document.body.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+      gtag('config', 'AW-17547034192');
+    });
   </script>
 
-  <script defer>
+  <!-- Conversion Tracking -->
+  <script>
     function gtag_report_conversion(url) {
       var callback = function () {
         if (typeof(url) != 'undefined') {
@@ -35,27 +87,25 @@
         }
       };
       gtag('event', 'conversion', {
-          'send_to': 'AW-17547034192/9vopCOvo_JcbEND8ia9B',
-          'value': 1.0,
-          'currency': 'SGD',
-          'event_callback': callback
+        'send_to': 'AW-17547034192/9vopCOvo_JcbEND8ia9B',
+        'value': 1.0,
+        'currency': 'SGD',
+        'event_callback': callback
       });
       return false;
     }
   </script>
 
-  <script defer type="text/javascript">
-    (function(c,l,a,r,i,t,y){
+  <!-- Microsoft Clarity (Delayed Load) -->
+  <script>
+    window.addEventListener("load", function () {
+      (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "tb3xwtbom1");
+      })(window, document, "clarity", "script", "tb3xwtbom1");
+    });
   </script>
 
-  <link rel="modulepreload" href="/src/main.jsx" />
-</head>
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

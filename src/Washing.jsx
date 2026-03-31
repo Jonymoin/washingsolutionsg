@@ -290,17 +290,18 @@ const WashingRepairSG = () => {
                   <p className="text-sm italic text-gray-200 mb-3">"{reviews[currentReview].text}"</p>
                   <p className="text-sm font-bold text-white">- {reviews[currentReview].author}, {reviews[currentReview].location}</p>
                 </div>
-                <div className="flex justify-center mt-4 space-x-2">
-                  {reviews.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentReview(index)}
-                      className={`w-2 h-2 rounded-full transition-colors ${
-                        index === currentReview ? 'bg-blue-400' : 'bg-gray-500'
-                      }`}
-                    />
-                  ))}
-                </div>
+               <div className="flex justify-center mt-4 space-x-2">
+  {reviews.map((_, index) => (
+    <button
+      key={index}
+      onClick={() => setCurrentReview(index)}
+      aria-label={`Go to review ${index + 1}`}
+      className={`w-2 h-2 rounded-full transition-colors ${
+        index === currentReview ? 'bg-blue-400' : 'bg-gray-500'
+      }`}
+    />
+  ))}
+</div>
               </div>
             </div>
           </div>
