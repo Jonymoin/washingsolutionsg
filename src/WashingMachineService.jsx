@@ -1,12 +1,16 @@
 import { Phone, MessageCircle, Star } from "lucide-react";
 
 const problems = [
-  { icon: "🌊", title: "Water Issue", desc: "Filling / draining problem" },
-  { icon: "💡", title: "Error Code", desc: "Display or sensor issue" },
-  { icon: "🔄", title: "Not Spinning", desc: "Motor or belt problem" },
-  { icon: "🔊", title: "Noise", desc: "Vibration or loose parts" },
-  { icon: "⚡", title: "Electrical", desc: "Power/control fault" },
-  { icon: "💧", title: "Leak", desc: "Pipe/seal damage" },
+  { icon: "🌊", title: "Water Filling/Draining", desc: "Blocked filters or faulty inlet valves." },
+  { icon: "💡", title: "Error Code on Display", desc: "Motor errors, sensor failures, or load imbalance." },
+  { icon: "🔄", title: "Machine Not Spinning", desc: "Broken drive belt or motor carbon brush issues." },
+  { icon: "💧", title: "Water Leakage", desc: "Damaged door seals (gasket) or cracked hoses." },
+  { icon: "🚪", title: "Door Latch Repair", desc: "Door won't lock or unlock due to faulty switch." },
+  { icon: "🛠️", title: "Drainage Blockage", desc: "Internal pump failure or drain pipe obstruction." },
+  { icon: "🌀", title: "Agitator Not Moving", desc: "Mechanical transmission or coupler failure." },
+  { icon: "🔥", title: "Heating Problems", desc: "Faulty heating element or thermostat sensor." },
+  { icon: "🧼", title: "Detergent Dispenser", desc: "Soap not flushing or leaking from drawer." },
+  { icon: "🏗️", title: "Excessive Shaking", desc: "Damaged suspension springs or shock absorbers." },
 ];
 
 export default function WashingSolutionPro() {
