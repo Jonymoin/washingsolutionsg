@@ -77,7 +77,7 @@ export default function WashingSolutionPro() {
 
         <div className="grid sm:grid-cols-2 gap-3">
           {problems.map((p) => (
-            <div key={p.title} className="bg-white/10 p-4 rounded-lg flex gap-3 hover:bg-white/20 transition">
+            <div key={p.title} className="bg-black p-4 rounded-lg flex gap-3 hover:bg-white/20 transition">
               <span className="text-xl">{p.icon}</span>
               <div>
                 <h3 className="text-sm font-semibold">{p.title}</h3>
