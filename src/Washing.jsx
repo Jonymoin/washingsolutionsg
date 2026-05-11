@@ -115,7 +115,7 @@ const WashingRepairSG = () => {
                 <img src="/logo.webp" alt="" className='w-12'/>
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-red-600">WashingSolution SG</h1>
+                <h1 className="text-2xl font-bold text-cyan-600">WashingSolution SG</h1>
                 <p className="text-sm text-gray-300">Professional Washing Machine Service</p>
               </div>
             </div>

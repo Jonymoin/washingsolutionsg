@@ -15,7 +15,7 @@ const problems = [
 
 export default function WashingSolutionPro() {
   return (
-    <div className="bg-red-600 text-white min-h-screen">
+    <div className="bg-cyan-600 text-white min-h-screen">
 
       {/* SEO Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{
@@ -30,7 +30,7 @@ export default function WashingSolutionPro() {
       }} />
 
       {/* NAV */}
-      <nav className="sticky top-0 bg-red-700/95 backdrop-blur-sm px-4 py-3 flex justify-between items-center">
+      <nav className="sticky top-0 bg-black backdrop-blur-sm px-4 py-3 flex justify-between items-center">
         <div className="font-bold flex items-center gap-2">
           🫧 WashingSolution SG
         </div>
