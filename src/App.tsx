@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Phone, Mail, MapPin, CheckCircle, Clock, ShieldCheck, Star, MessageCircle, Wrench, AlertCircle, Droplets, Zap, ChevronRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const easeOut = [0.22, 1, 0.36, 1];
+const easeInOut = [0.42, 0, 0.58, 1];
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -109,8 +110,7 @@ function FloatingWhatsApp() {
       <motion.div
         className="absolute inset-0 rounded-full border-2 border-[#25D366]"
         animate={{ scale: [1, 1.5], opacity: [1, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut" }}
-      />
+        transition={{ duration: 1.5, repeat: Infinity, ease: [0.22, 1, 0.36, 1] }}      />
       <MessageCircle size={32} />
       <span className="absolute right-full mr-4 bg-white text-foreground text-sm font-medium px-3 py-1 rounded shadow-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
         Chat with us
@@ -120,8 +120,12 @@ function FloatingWhatsApp() {
 }
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  hidden: { opacity: 0, y: 40 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } 
+  }
 };
 
 const staggerContainer = {
@@ -143,8 +147,7 @@ function Hero() {
           className="w-full h-full object-cover"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-        />
+transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}        />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/80 to-transparent"></div>
       </div>
 
