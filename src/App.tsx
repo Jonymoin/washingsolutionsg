@@ -28,12 +28,17 @@ function Navbar() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm py-3" : "bg-white py-5"}`}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2">
-          <div className="bg-primary text-white p-2 rounded-lg">
-            <Wrench size={24} />
-          </div>
-          <span className="font-bold text-xl text-foreground tracking-tight">WashingSolution<span className="text-primary">SG</span></span>
-        </a>
-
+  <div className="bg-primary p-2 rounded-lg">
+    <img 
+      src="/logo.webp" 
+      alt="WashingSolution Logo" 
+      className="w-6 h-6 object-contain"
+    />
+  </div>
+  <span className="font-bold text-xl text-foreground tracking-tight">
+    WashingSolution<span className="text-primary">SG</span>
+  </span>
+</a>
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {links.map((link) => (
@@ -462,6 +467,25 @@ function Testimonials() {
 }
 
 function Contact() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [issue, setIssue] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const msg = `Hello WashingSolution SG! I need a washing machine repair.%0A%0AName: ${encodeURIComponent(name || "Not provided")}%0APhone: ${encodeURIComponent(phone || "Not provided")}%0AIssue: ${encodeURIComponent(issue || "Not provided")}`;
+    window.open(`https://wa.me/6585301773?text=${msg}`, "_blank");
+    setSubmitted(true);
+  };
+
+  const handleReset = () => {
+    setName("");
+    setPhone("");
+    setIssue("");
+    setSubmitted(false);
+  };
+
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
@@ -526,31 +550,85 @@ function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-foreground mb-6">Send us a message</h3>
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground">Name</label>
-                  <input type="text" className="w-full h-12 px-4 rounded-lg border border-border bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="Your name" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground">Phone Number</label>
-                  <input type="tel" className="w-full h-12 px-4 rounded-lg border border-border bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="Your phone number" />
-                </div>
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Machine Brand & Issue</label>
-                <textarea rows={4} className="w-full p-4 rounded-lg border border-border bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none" placeholder="E.g. Samsung washer not spinning..." />
-              </div>
+            {submitted ? (
+              <motion.div
+                className="flex flex-col items-center justify-center h-full text-center py-10"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ type: "spring", stiffness: 200, damping: 18 }}
+              >
+                <motion.div
+                  className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.1 }}
+                >
+                  <CheckCircle size={40} className="text-green-600" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Request Sent!</h3>
+                <p className="text-muted-foreground mb-2 max-w-xs">
+                  WhatsApp has been opened with your message. We'll get back to you as soon as possible!
+                </p>
+                <p className="text-sm text-muted-foreground mb-8">
+                  For urgent repairs, call us directly at <a href="tel:+6585301773" className="text-primary font-semibold">+65 8530 1773</a>.
+                </p>
+                <Button variant="outline" onClick={handleReset} className="gap-2">
+                  Send Another Request
+                </Button>
+              </motion.div>
+            ) : (
+              <>
+                <h3 className="text-2xl font-bold text-foreground mb-6">Send us a message</h3>
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-foreground">Name</label>
+                      <input
+                        type="text"
+                        required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full h-12 px-4 rounded-lg border border-border bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                        placeholder="Your name"
+                        data-testid="input-name"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-foreground">Phone Number</label>
+                      <input
+                        type="tel"
+                        required
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        className="w-full h-12 px-4 rounded-lg border border-border bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                        placeholder="Your phone number"
+                        data-testid="input-phone"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground">Machine Brand & Issue</label>
+                    <textarea
+                      rows={4}
+                      required
+                      value={issue}
+                      onChange={(e) => setIssue(e.target.value)}
+                      className="w-full p-4 rounded-lg border border-border bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
+                      placeholder="E.g. Samsung washer not spinning..."
+                      data-testid="input-issue"
+                    />
+                  </div>
 
-              <Button type="submit" size="lg" className="w-full h-12 text-base">
-                Send Request
-              </Button>
-              <p className="text-xs text-center text-muted-foreground mt-4">
-                We'll get back to you as soon as possible. For urgent inquiries, please call us directly.
-              </p>
-            </form>
+                  <Button type="submit" size="lg" className="w-full h-12 text-base gap-2" data-testid="button-send-request">
+                    <MessageCircle size={18} /> Send via WhatsApp
+                  </Button>
+                  <p className="text-xs text-center text-muted-foreground mt-4">
+                    This will open WhatsApp with your details pre-filled. For urgent inquiries, please call us directly.
+                  </p>
+                </form>
+              </>
+            )}
           </motion.div>
         </div>
       </div>
