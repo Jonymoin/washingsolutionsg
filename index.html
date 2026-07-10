@@ -1,92 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>WashingSolution SG | Washing Machine Repair Singapore</title>
-    <meta name="description" content="Fast, reliable, and certified washing machine repairs in Singapore. 7 years experience, 2000+ repairs, and 30-day warranty." />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://washingsolutionsg.com/" />
+<head>
+  <meta charset="UTF-8" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="WashingSolution SG | Washing Machine Repair Singapore" />
-    <meta property="og:description" content="Fast, reliable, and certified washing machine repairs in Singapore. 7 years experience, 2000+ repairs, and 30-day warranty." />
-    <meta property="og:image" content="/opengraph.jpg" />
-    <meta property="og:type" content="website" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="WashingSolution SG | Washing Machine Repair Singapore" />
-    <meta name="twitter:description" content="Fast, reliable, and certified washing machine repairs in Singapore. 7 years experience, 2000+ repairs, and 30-day warranty." />
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#1D4ED8" />
+  <!-- SEO -->
+  <title>WashingSolution SG</title>
+  <meta name="description" content="Washing machine and dryer repair service in Singapore. Fast and reliable troubleshooting and installation." />
+  <link rel="canonical" href="https://washingsolutionsg.com/" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+  <!-- Open Graph (SEO Boost) -->
+  <meta property="og:title" content="WashingSolution SG" />
+  <meta property="og:description" content="Fast washing machine repair in Singapore" />
+  <meta property="og:image" content="/washingsolution.webp" />
+  <meta property="og:type" content="website" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#111827" />
 
-    <!-- Preconnect for tracking -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://www.google-analytics.com" />
-    <link rel="preconnect" href="https://www.clarity.ms" />
-    <link rel="dns-prefetch" href="//www.googletagmanager.com">
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <link rel="dns-prefetch" href="//www.clarity.ms">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <!-- Preload Hero Image -->
+  <link 
+    rel="preload" 
+    href="/washingsolution.webp" 
+    as="image" 
+    fetchpriority="high"
+  />
 
-    <!-- Google Ads Tag (Delayed Load for Performance) -->
-    <script>
-      window.addEventListener("load", function () {
-        var s = document.createElement("script");
-        s.src = "https://www.googletagmanager.com/gtag/js?id=AW-17547034192";
-        s.async = true;
-        document.body.appendChild(s);
+  <!-- Preconnect (Performance) -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://www.google-analytics.com" />
+  <link rel="preconnect" href="https://www.clarity.ms" />
 
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        window.gtag = gtag;
+  <!-- DNS Prefetch -->
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//www.clarity.ms">
 
-        gtag('js', new Date());
-        gtag('config', 'AW-17547034192');
+  <!-- CSS (Non-blocking) -->
+  <link rel="preload" href="/assets/index-S75_i8DE.css" as="style" />
+  <link
+    rel="stylesheet"
+    href="/assets/index-S75_i8DE.css"
+    media="print"
+    onload="this.media='all'"
+  />
+  <noscript>
+    <link rel="stylesheet" href="/assets/index-S75_i8DE.css" />
+  </noscript>
+
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- React App -->
+  <script type="module" src="/src/main.jsx"></script>
+
+  <!-- Google Analytics (Delayed Load for Performance) -->
+  <script>
+    window.addEventListener("load", function () {
+      var s = document.createElement("script");
+      s.src = "https://www.googletagmanager.com/gtag/js?id=AW-17547034192";
+      s.async = true;
+      document.body.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+      gtag('config', 'AW-17547034192');
+    });
+  </script>
+
+  <!-- Conversion Tracking -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17547034192/9vopCOvo_JcbEND8ia9B',
+        'value': 1.0,
+        'currency': 'SGD',
+        'event_callback': callback
       });
-    </script>
+      return false;
+    }
+  </script>
 
-    <!-- Google Ads Conversion Tracking -->
-    <script>
-      function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof(url) != 'undefined') {
-            window.location = url;
-          }
-        };
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17547034192/9vopCOvo_JcbEND8ia9B',
-          'value': 1.0,
-          'currency': 'SGD',
-          'event_callback': callback
-        });
-        return false;
-      }
-    </script>
+  <!-- Microsoft Clarity (Delayed Load) -->
+  <script>
+    window.addEventListener("load", function () {
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "tb3xwtbom1");
+    });
+  </script>
 
-    <!-- Microsoft Clarity (Delayed Load) -->
-    <script>
-      window.addEventListener("load", function () {
-        (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "tb3xwtbom1");
-      });
-    </script>
-
-  </body>
+</body>
 </html>
