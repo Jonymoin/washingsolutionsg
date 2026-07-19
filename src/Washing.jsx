@@ -4,7 +4,7 @@ import WashingMachineService from './WashingMachineService';
 import HeroSection from './HeroSection';
 import WashingSolutionBanner from './WashingSolutionBanner';
 import WashingMachineDiagnostic from './WashingMachineDiagnostic';
-
+import { FaWhatsapp } from "react-icons/fa";
 const WashingRepairSG = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
@@ -71,11 +71,22 @@ const WashingRepairSG = () => {
   ];
 
   const whatsappLink = `https://wa.me/+6585301773?text=Hello%20WashingSolution%20SG,%20I%20need%20washing%20machine%20service.`;
-  const handleClick = () => {
-    if (typeof window.gtag_report_conversion === "function") {
-      window.gtag_report_conversion();
-    }
-  };
+  const handleCall = () => {
+  if (window.gtag_report_conversion) {
+    window.gtag_report_conversion("tel:+6585301773");
+  } else {
+    window.location.href = "tel:+6585301773";
+  }
+};
+
+const handleWhatsApp = () => {
+  if (window.gtag_report_conversion) {
+    window.gtag_report_conversion("https://wa.me/6585301773");
+  } else {
+    window.location.href = "https://wa.me/6585301773";
+  }
+};
+  
   return (
     <div className="min-h-screen bg-gray-900">
       {/* Mobile Top Action Bar */}
@@ -85,7 +96,7 @@ const WashingRepairSG = () => {
             <a 
               href={`tel:+6585301773`} 
                 aria-label="phone"
-               onClick={handleClick}
+               onClick={handleCall}
               className="flex-1 bg-black hover:bg-gray-600 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
             >
               <Phone className="h-4 w-4" />
@@ -96,7 +107,7 @@ const WashingRepairSG = () => {
               target="_blank" 
               aria-label="whatsapp"
               rel="noopener noreferrer" 
-              onClick={handleClick}
+              onClick={handleWhatsApp}
               className="flex-1 bg-green-700 hover:bg-green-400 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
             >
               <MessageCircle className="h-4 w-4" />
@@ -132,11 +143,11 @@ const WashingRepairSG = () => {
 
             {/* Contact Buttons */}
             <div className="hidden md:flex space-x-3">
-              <a href={`tel:+6585301773`} onClick={handleClick}  className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-700 transition-colors">
+              <a href={`tel:+6585301773`} onClick={handleCall}  className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-700 transition-colors">
                 <Phone className="h-4 w-4" />
                 <span>Call Now</span>
               </a>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" onClick={handleClick} className="bg-green-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-green-400 transition-colors">
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" onClick={handleWhatsApp} className="bg-green-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-green-400 transition-colors">
                 <MessageCircle className="h-4 w-4" />
                 <span>WhatsApp</span>
               </a>
@@ -163,11 +174,11 @@ const WashingRepairSG = () => {
                 <a href="#contact" aria-label="Go to slide 5" className="text-gray-300 hover:text-blue-400">Contact</a>
               </nav>
               <div className="flex space-x-3 mt-4">
-                <a href={`tel:+6585301773`} onClick={handleClick} className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 flex-1 justify-center">
+                <a href={`tel:+6585301773`} onClick={handleCall} className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 flex-1 justify-center">
                   <Phone className="h-4 w-4" />
                   <span>Call</span>
                 </a>
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-green-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 flex-1 justify-center">
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" onClick={handleWhatsApp} className="bg-green-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 flex-1 justify-center">
                   <MessageCircle className="h-4 w-4" />
                   <span>WhatsApp</span>
                 </a>
@@ -429,11 +440,11 @@ const WashingRepairSG = () => {
                 <h4 className="font-bold text-lg mb-4">Ready to Fix Your Washing Machine?</h4>
                 <p className="mb-4">Don't let a broken washing machine disrupt your daily routine. Contact us now for fast, professional service!</p>
                 <div className="flex space-x-4">
-                  <a href={`tel:+6585301773`} onClick={handleClick} className="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors flex items-center space-x-2">
+                  <a href={`tel:+6585301773`} onClick={handleCall} className="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors flex items-center space-x-2">
                     <Phone className="h-4 w-4" />
                     <span>Call Now</span>
                   </a>
-                  <a href={whatsappLink} onClick={handleClick} target="_blank" rel="noopener noreferrer" className="bg-green-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition-colors flex items-center space-x-2">
+                  <a href={whatsappLink} onClick={handleWhatsApp} target="_blank" rel="noopener noreferrer" className="bg-green-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition-colors flex items-center space-x-2">
                     <MessageCircle className="h-4 w-4" />
                     <span>WhatsApp</span>
                   </a>
@@ -449,7 +460,9 @@ const WashingRepairSG = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <div className="bg-blue-600 p-2 rounded-lg">
-              <Wrench className="h-6 w-6 text-white" />
+             <div className="">
+                <img src="/logo.webp" alt="" className='w-12'/>
+              </div>
             </div>
             <h3 className="text-xl font-bold">WashingSolution SG</h3>
           </div>
@@ -463,17 +476,24 @@ const WashingRepairSG = () => {
 
       {/* Fixed WhatsApp Floating Button */}
       <div className="fixed bottom-6 right-6 z-50">
-        <a
-          href={whatsappLink}
-          onClick={handleClick}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-green-700 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
-          title="Chat with us on WhatsApp"
-        >
-          <MessageCircle className="h-6 w-6" />
-        </a>
-      </div>
+  <a
+    href={whatsappLink}
+    onClick={handleWhatsApp}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl transition-transform duration-300 hover:scale-110"
+    title="Chat with us on WhatsApp"
+  >
+    {/* Animated Ring */}
+    <span className="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-70 animate-ping"></span>
+
+    {/* Glow */}
+    <span className="absolute h-full w-full rounded-full animate-pulse bg-[#25D366]/40 blur-md"></span>
+
+    {/* WhatsApp Logo */}
+    <FaWhatsapp className="relative z-10 text-4xl" />
+  </a>
+</div>
     </div>
   );
 };

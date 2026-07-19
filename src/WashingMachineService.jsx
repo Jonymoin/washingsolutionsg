@@ -15,7 +15,7 @@ const problems = [
 
 export default function WashingSolutionPro() {
   return (
-    <div className="bg-cyan-600 text-white min-h-screen">
+    <div className="bg-gradient-to-r from-cyan-600 via-indigo-600 to-slate-800 text-white min-h-screen">
 
       {/* SEO Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{
@@ -77,7 +77,7 @@ export default function WashingSolutionPro() {
 
         <div className="grid sm:grid-cols-2 gap-3">
           {problems.map((p) => (
-            <div key={p.title} className="bg-indigo-600 p-4 rounded-lg flex gap-3 hover:bg-white/20 transition">
+            <div key={p.title} className="bg-gradient-to-r from-green-600 to-black p-4 rounded-lg flex gap-3 hover:bg-white/20 transition">
               <span className="text-xl">{p.icon}</span>
               <div>
                 <h3 className="text-sm font-semibold">{p.title}</h3>

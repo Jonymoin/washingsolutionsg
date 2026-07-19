@@ -19,7 +19,7 @@ const slides = [
   },
   {
     image: '/washingsolution3.webp',
-    title: 'Satisfaction Guaranteed',
+    title: 'Singapore #1 Repair Service',
     subtitle: 'Quality repairs with warranty. Trusted by thousands of happy customers'
   }
 ];
