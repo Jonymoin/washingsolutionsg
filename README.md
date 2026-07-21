@@ -1,12 +1,37 @@
-# React + Vite
+# WashingSolutionSG Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A multi-page React + Tailwind CSS website for WashingSolutionSG.
 
-Currently, two official plugins are available:
+## Quick start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Extract the ZIP file.
+2. Open the folder in VS Code (or any terminal).
+3. Run the commands below:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+4. Open the local URL shown in the terminal (usually `http://localhost:8080`).
+
+## Available scripts
+
+- `npm run dev` – start the development server
+- `npm run build` – build for production
+- `npm run preview` – preview the production build
+- `npm run lint` – run ESLint
+- `npm run format` – format code with Prettier
+
+## Tech stack
+
+- React 19
+- TanStack Start / TanStack Router
+- Tailwind CSS v4
+- Vite
+- TypeScript
+
+## Notes
+
+- Replace placeholder images in `public/images/` with your own assets (`ws1.webp` … `ws10.webp`) when ready.
+- The site is fully responsive and includes SEO metadata, sitemap, and robots.txt.
