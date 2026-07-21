@@ -6,6 +6,7 @@ import {
 import { trackConversion } from "@/lib/tracking";
 import { CTASection } from "@/components/CTASection";
 import { SERVICES, BRANDS, AREAS, REVIEWS, FAQS } from "@/lib/site-data";
+import WashingMachineDiagnostic from "@/components/WashingMachineDiagnostic";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -127,7 +128,10 @@ function HomePage() {
           ))}
         </div>
       </section>
-
+       {/* Diognosis */}
+       <section>
+        <WashingMachineDiagnostic />
+       </section>
       {/* SERVICES OVERVIEW */}
       <section className="bg-neutral-50 py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
