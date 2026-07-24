@@ -28,7 +28,7 @@ export function Header() {
   <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg bg-black">
     <img
       src="/logo.webp"
-      alt="WashingSolution SG Logo"
+      alt="WashingSolutionSG Logo"
       className="h-full w-full object-contain"
     />
   </div>
