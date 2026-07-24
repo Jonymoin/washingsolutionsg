@@ -6,7 +6,6 @@ import {
 import { trackConversion } from "@/lib/tracking";
 import { CTASection } from "@/components/CTASection";
 import { SERVICES, BRANDS, AREAS, REVIEWS, FAQS } from "@/lib/site-data";
-import WashingMachineDiagnostic from "@/components/WashingMachineDiagnostic";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -102,7 +101,7 @@ function HomePage() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Why choose us</span>
           <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">
-            The <span className="text-yellow">most trusted</span> repair team in Singapore
+            The <span className="gradient-text">most trusted</span> repair team in Singapore
           </h2>
           <p className="mt-3 text-muted-foreground">
             We combine transparent pricing, experienced technicians and genuine spare parts to deliver
@@ -118,7 +117,7 @@ function HomePage() {
             { icon: CheckCircle2, title: "Genuine Spare Parts", desc: "We use OEM parts to keep your washer running for years to come." },
             { icon: MapPin, title: "Islandwide Coverage", desc: "From Woodlands to Changi — we service every neighbourhood in Singapore." },
           ].map((f) => (
-            <div key={f.title} className="group rounded-2xl border border-black/10 bg-white p-6 transition hover:-translate-y-1 hover:border-yellow shadow-[0_20px_50px_-20px_var(--yellow)]">
+            <div key={f.title} className="group rounded-2xl border border-black/10 bg-white p-6 transition hover:-translate-y-1 hover:border-yellow hover:shadow-[0_20px_50px_-20px_var(--yellow)]">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-yellow">
                 <f.icon className="h-6 w-6 text-black" />
               </div>
@@ -128,10 +127,7 @@ function HomePage() {
           ))}
         </div>
       </section>
-       {/* Diognosis */}
-       <section>
-        <WashingMachineDiagnostic />
-       </section>
+
       {/* SERVICES OVERVIEW */}
       <section className="bg-neutral-50 py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
@@ -139,7 +135,7 @@ function HomePage() {
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Our services</span>
               <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">
-                Every washing machine, <span className="text-yellow">every fix</span>
+                Every washing machine, <span className="gradient-text">every fix</span>
               </h2>
             </div>
             <Link to="/services" onClick={() => trackConversion()} className="btn-outline text-sm">
@@ -167,12 +163,12 @@ function HomePage() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Brands we repair</span>
           <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">
-            All major brands, <span className="text-yellow">expertly serviced</span>
+            All major brands, <span className="gradient-text">expertly serviced</span>
           </h2>
         </div>
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {BRANDS.map((b) => (
-            <div key={b} className="flex bg-yellow items-center justify-center rounded-xl border border-black/10 px-4 py-6 text-sm font-semibold text-neutral-800 transition hover:border-yellow hover:bg-yellow/10">
+            <div key={b} className="flex items-center justify-center rounded-xl border border-black/10 bg-white px-4 py-6 text-sm font-semibold text-neutral-800 transition hover:border-yellow hover:bg-yellow/10">
               {b}
             </div>
           ))}
@@ -223,7 +219,7 @@ function HomePage() {
           <div>
             <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Coverage</span>
             <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">
-              Servicing <span className="text-yellow">all of Singapore</span>, 7 days a week
+              Servicing <span className="gradient-text">all of Singapore</span>, 7 days a week
             </h2>
             <p className="mt-3 text-muted-foreground">
               From the north to the east, west to the CBD — our technicians reach every neighbourhood
@@ -235,8 +231,8 @@ function HomePage() {
           </div>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
             {AREAS.slice(0, 12).map((a) => (
-              <div key={a} className="flex items-center gap-2 rounded-lg border border-black/10 bg-yellow px-3 py-2 text-sm">
-                <MapPin className="h-3.5 w-3.5 text-white" /> {a}
+              <div key={a} className="flex items-center gap-2 rounded-lg border border-black/10 bg-white px-3 py-2 text-sm">
+                <MapPin className="h-3.5 w-3.5 text-yellow" /> {a}
               </div>
             ))}
           </div>
@@ -249,7 +245,7 @@ function HomePage() {
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Faqs</span>
             <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">
-              Frequently <span className="text-yellow">asked questions</span>
+              Frequently <span className="gradient-text">asked questions</span>
             </h2>
           </div>
           <div className="mt-10 space-y-3">
@@ -278,19 +274,19 @@ function HomePage() {
         <div className="grid gap-8 rounded-3xl border border-black/10 bg-white p-8 md:grid-cols-2 md:p-12">
           <div>
             <h2 className="text-3xl font-extrabold md:text-4xl">
-              Get in <span className="text-yellow">touch</span>
+              Get in <span className="gradient-text">touch</span>
             </h2>
             <p className="mt-3 text-muted-foreground">
               Call, message or email us — we respond within minutes, every day of the week.
             </p>
             <div className="mt-6 space-y-3 text-sm">
-              <a href="tel:+6585301773" onClick={() => trackConversion()} className="flex bg-yellow items-center gap-3 rounded-lg border border-black/10 p-3 hover:border-yellow">
+              <a href="tel:+6585301773" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg border border-black/10 p-3 hover:border-yellow">
                 <Phone className="h-4 w-4" /> +65 8530 1773
               </a>
-              <a href="https://wa.me/6585301773" target="_blank" rel="noreferrer" onClick={() => trackConversion()} className="flex bg-yellow items-center gap-3 rounded-lg border border-black/10 p-3 hover:border-yellow">
+              <a href="https://wa.me/6585301773" target="_blank" rel="noreferrer" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg border border-black/10 p-3 hover:border-yellow">
                 <MessageCircle className="h-4 w-4" /> WhatsApp Chat
               </a>
-              <a href="mailto:washingsolutionsg@gmail.com" onClick={() => trackConversion()} className="flex items-center gap-3 bg-yellow rounded-lg border border-black/10 p-3 hover:border-yellow">
+              <a href="mailto:washingsolutionsg@gmail.com" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg border border-black/10 p-3 hover:border-yellow">
                 <span className="font-mono text-xs">@</span> washingsolutionsg@gmail.com
               </a>
             </div>

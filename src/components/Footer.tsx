@@ -8,11 +8,18 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-4 md:px-6">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-yellow">
-              <span className="text-lg font-black text-black">W</span>
-            </div>
-            <span className="text-lg font-extrabold">WashingSolutionSG</span>
-          </div>
+  <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg bg-yellow">
+    <img
+      src="/logo.webp"
+      alt="WashingSolution SG Logo"
+      className="h-full w-full object-contain"
+    />
+  </div>
+
+  <span className="text-lg font-extrabold">
+    WashingSolutionSG
+  </span>
+</div>
           <p className="mt-4 text-sm text-neutral-400">
             Singapore's trusted washing machine repair specialists.
             Same-day service, 7 days a week.
@@ -48,6 +55,9 @@ export function Footer() {
               ["/reviews", "Reviews"],
               ["/faqs", "FAQs"],
               ["/contact", "Contact"],
+              ["/about-us", "About Us"],
+              ["/privacy-policy", "Privacy Policy"],
+              ["/terms-and-conditions", "Terms & Conditions"],
             ].map(([to, label]) => (
               <li key={to}>
                 <Link to={to} onClick={() => trackConversion()} className="hover:text-yellow">
