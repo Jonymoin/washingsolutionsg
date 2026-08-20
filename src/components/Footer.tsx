@@ -44,7 +44,7 @@ export function Footer() {
           <h4 className="text-sm font-semibold uppercase tracking-wider text-yellow">More</h4>
           <ul className="mt-4 space-y-2 text-sm text-neutral-300">
             {[
-             ["/coverage-areas", "Coverage Areas"],
+              ["/coverage-areas", "Coverage Areas"],
               ["/reviews", "Reviews"],
               ["/faqs", "FAQs"],
               ["/contact", "Contact"],

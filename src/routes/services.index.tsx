@@ -1,10 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
 import { CTASection } from "@/components/CTASection";
-import { SERVICES } from "@/lib/site-data";
-import { CheckCircle2 } from "lucide-react";
+import { SERVICE_DETAILS } from "@/lib/service-details";
+import { trackConversion } from "@/lib/tracking";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Our Services | Washing Machine Repair Singapore — WashingSolutionSG" },
@@ -27,8 +28,14 @@ function ServicesPage() {
       />
       <section className="mx-auto max-w-7xl px-4 py-20 md:px-6">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((s) => (
-            <article key={s.title} className="group overflow-hidden rounded-2xl border border-black/10 bg-white transition hover:-translate-y-1 hover:shadow-xl">
+          {SERVICE_DETAILS.map((s) => (
+            <Link
+              key={s.title}
+              to="/services/$slug"
+              params={{ slug: s.slug }}
+              onClick={() => trackConversion()}
+              className="group block overflow-hidden rounded-2xl border border-black/10 bg-white transition hover:-translate-y-1 hover:shadow-xl"
+            >
               <div className="aspect-[4/3] overflow-hidden bg-neutral-200">
                 <img src={s.img} alt={s.title} className="h-full w-full object-cover transition group-hover:scale-105" />
               </div>
@@ -42,8 +49,11 @@ function ServicesPage() {
                     </li>
                   ))}
                 </ul>
+                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-black">
+                  View details <ArrowRight className="h-4 w-4" />
+                </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>

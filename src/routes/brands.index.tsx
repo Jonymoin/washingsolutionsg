@@ -1,9 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
 import { CTASection } from "@/components/CTASection";
-import { BRANDS } from "@/lib/site-data";
+import { BRAND_DETAILS } from "@/lib/brand-details";
+import { trackConversion } from "@/lib/tracking";
 
-export const Route = createFileRoute("/brands")({
+export const Route = createFileRoute("/brands/")({
   head: () => ({
     meta: [
       { title: "Brands We Repair | Samsung, LG, Bosch & More | WashingSolutionSG" },
@@ -26,11 +27,17 @@ function BrandsPage() {
       />
       <section className="mx-auto max-w-7xl px-4 py-20 md:px-6">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-          {BRANDS.map((b) => (
-            <div key={b} className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-black/10 bg-white p-8 text-center transition hover:-translate-y-1 hover:border-yellow hover:shadow-[0_20px_50px_-20px_var(--yellow)]">
-              <div className="text-lg font-extrabold">{b}</div>
+          {BRAND_DETAILS.map((b) => (
+            <Link
+              key={b.slug}
+              to="/brands/$slug"
+              params={{ slug: b.slug }}
+              onClick={() => trackConversion()}
+              className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-black/10 bg-white p-8 text-center transition hover:-translate-y-1 hover:border-yellow hover:shadow-[0_20px_50px_-20px_var(--yellow)]"
+            >
+              <div className="text-lg font-extrabold">{b.name}</div>
               <div className="text-xs text-muted-foreground">Certified repair</div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

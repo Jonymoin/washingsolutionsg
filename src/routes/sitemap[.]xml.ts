@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SERVICE_DETAILS } from "@/lib/service-details";
+import { BRAND_DETAILS } from "@/lib/brand-details";
 import type {} from "@tanstack/react-start";
 
 const BASE_URL = "";
@@ -22,6 +24,19 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/reviews", changefreq: "weekly", priority: "0.7" },
           { path: "/faqs", changefreq: "monthly", priority: "0.6" },
           { path: "/contact", changefreq: "yearly", priority: "0.8" },
+          { path: "/about-us", changefreq: "yearly", priority: "0.6" },
+          { path: "/privacy-policy", changefreq: "yearly", priority: "0.3" },
+          { path: "/terms-and-conditions", changefreq: "yearly", priority: "0.3" },
+          ...SERVICE_DETAILS.map((s) => ({
+            path: `/services/${s.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.8",
+          })),
+          ...BRAND_DETAILS.map((b) => ({
+            path: `/brands/${b.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.7",
+          })),
         ];
 
         const urls = entries.map(

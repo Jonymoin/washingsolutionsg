@@ -121,7 +121,21 @@ function TermsPage() {
             </p>
           </Block>
 
-          <Block title="11. Non-Repairable Units">
+          <Block title="11. If the Repair Cannot Be Completed">
+            <div className="rounded-2xl border border-yellow bg-yellow/15 p-5">
+              <p className="font-semibold">
+                Important: If our technician is unable to repair your washing machine,
+                you only pay a flat fee of <strong>SGD 50</strong>.
+              </p>
+              <p className="mt-2 text-sm text-neutral-700">
+                This SGD 50 covers the technician's visit, full diagnosis and the written
+                assessment of your machine. No repair charges, no parts charges and no
+                hidden costs apply when the job cannot be completed.
+              </p>
+            </div>
+          </Block>
+
+          <Block title="12. Non-Repairable Units">
             <p>
               If your washing machine cannot be economically repaired, we will give you
               an honest assessment and, where possible, recommend replacement options.
@@ -129,7 +143,7 @@ function TermsPage() {
             </p>
           </Block>
 
-          <Block title="12. Intellectual Property">
+          <Block title="13. Intellectual Property">
             <p>
               All content on this website — including text, graphics, logos and images —
               is the property of WashingSolutionSG or its licensors and may not be
@@ -137,7 +151,7 @@ function TermsPage() {
             </p>
           </Block>
 
-          <Block title="13. Governing Law">
+          <Block title="14. Governing Law">
             <p>
               These Terms are governed by the laws of the Republic of Singapore. Any
               dispute arising out of or in connection with these Terms shall be subject
@@ -145,7 +159,7 @@ function TermsPage() {
             </p>
           </Block>
 
-          <Block title="14. Changes to Terms">
+          <Block title="15. Changes to Terms">
             <p>
               We may update these Terms and Conditions from time to time. The latest
               version will always be available on this page with the updated date shown
@@ -154,7 +168,7 @@ function TermsPage() {
             </p>
           </Block>
 
-          <Block title="15. Contact">
+          <Block title="16. Contact">
             <p>
               For any questions about these Terms, please contact us:
             </p>
