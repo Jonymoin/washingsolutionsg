@@ -103,7 +103,7 @@ function HomePage() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Why choose us</span>
           <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">
-            The <span className="gradient-text">most trusted</span> repair team in Singapore
+            The <span className="text-yellow">most trusted</span> repair team in Singapore
           </h2>
           <p className="mt-3 text-muted-foreground">
             We combine transparent pricing, experienced technicians and genuine spare parts to deliver
