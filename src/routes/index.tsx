@@ -24,9 +24,7 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Same-day washing machine repair, all brands, 7 days a week in Singapore.",
       },
-      {
-      name:"google-site-verification", content:"bKbYJ1ZYC62euSBDOREwqlCRGkX8iRT57IzYViY6MQU" 
-      },
+     
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),

@@ -103,6 +103,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Washing Machine Repair Singapore | WashingSolutionSG" },
       {
+  name: "google-site-verification",
+  content: "bKbYJ1ZYC62euSBDOREwqlCRGkX8iRT57IzYViY6MQU",
+},
+      {
         name: "description",
         content:
           "Same-day washing machine repair service in Singapore. All brands — Samsung, LG, Bosch, Electrolux and more. Open 7 days a week. Call +65 8530 1773.",
