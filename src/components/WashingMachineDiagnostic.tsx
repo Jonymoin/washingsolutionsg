@@ -365,7 +365,7 @@ function Modal({ problem, onClose }: ModalProps) {
               target="_blank"
               rel="noreferrer"
               onClick={() => trackConversion()}
-              className="btn-glass flex-1 text-center text-sm"
+              className="btn-glass flex-1 text-center text-sm px-6"
             >
               <MessageCircle className="h-4 w-4" />
               WhatsApp Us

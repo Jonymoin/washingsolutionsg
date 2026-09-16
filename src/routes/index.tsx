@@ -11,6 +11,7 @@ import { BRAND_DETAILS } from "@/lib/brand-details";
 
 export const Route = createFileRoute("/")({
   head: () => ({
+    
     meta: [
       { title: "Washing Machine Repair Singapore | Same Day | WashingSolutionSG" },
       {
@@ -22,6 +23,9 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content: "Same-day washing machine repair, all brands, 7 days a week in Singapore.",
+      },
+      {
+      name:"google-site-verification", content:"bKbYJ1ZYC62euSBDOREwqlCRGkX8iRT57IzYViY6MQU" 
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
