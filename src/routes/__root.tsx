@@ -129,11 +129,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Same-day washing machine repair service in Singapore. Open 7 days a week.",
       },
     ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.png", type: "image/x-icon" },
-      { rel: "canonical", href: "/" },
-    ],
+   links: [
+  { rel: "stylesheet", href: appCss },
+
+  {
+    rel: "icon",
+    type: "image/png",
+    sizes: "48x48",
+    href: "/favicon.png",
+  },
+
+  {
+    rel: "apple-touch-icon",
+    href: "/favicon.png",
+  },
+
+  {
+    rel: "canonical",
+    href: "/",
+  },
+],
     scripts: [{ children: GTAG_INIT }],
   }),
   shellComponent: RootShell,
