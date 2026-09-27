@@ -3,8 +3,7 @@ import { SERVICE_DETAILS } from "@/lib/service-details";
 import { BRAND_DETAILS } from "@/lib/brand-details";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "";
-
+const BASE_URL = "https://washingsolutionsg.com";
 interface SitemapEntry {
   path: string;
   changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
@@ -40,9 +39,13 @@ export const Route = createFileRoute("/sitemap.xml")({
         ];
 
         const urls = entries.map(
-          (e) =>
-            `  <url>\n    <loc>${BASE_URL}${e.path}</loc>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>`,
-        );
+  (e) => `
+  <url>
+    <loc>${new URL(e.path, BASE_URL).href}</loc>
+    <changefreq>${e.changefreq}</changefreq>
+    <priority>${e.priority}</priority>
+  </url>`
+);
 
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,
