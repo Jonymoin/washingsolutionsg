@@ -67,14 +67,7 @@ export const AREAS = [
   "Toa Payoh", "Woodlands", "Yishun", "Orchard", "Tanjong Pagar", "Marina Bay",
 ];
 
-export const REVIEWS = [
-  { name: "Michelle T.", area: "Tampines", text: "Called at 9am, technician arrived by 11am. Fixed my Samsung front loader same day. Highly recommend!", rating: 5 },
-  { name: "Ravi K.", area: "Bukit Batok", text: "Very transparent pricing. My LG washer's drain pump was replaced within an hour. Great service.", rating: 5 },
-  { name: "Angeline L.", area: "Punggol", text: "Sunday morning repair — no extra charges. Machine has been running perfectly for months now.", rating: 5 },
-  { name: "Daniel W.", area: "Bishan", text: "Professional, punctual and clean. Even taught me how to prevent the same issue happening again.", rating: 5 },
-  { name: "Priya S.", area: "Clementi", text: "My Bosch was showing an E18 error. They fixed it and cleaned the drum for a very reasonable price.", rating: 5 },
-  { name: "Kelvin Y.", area: "Woodlands", text: "Fast WhatsApp response, honest diagnosis, fair quote. This is now my go-to repair company.", rating: 5 },
-];
+
 
 export const FAQS = [
   {
@@ -110,3 +103,23 @@ export const FAQS = [
     a: "Call or WhatsApp us at +65 8530 1773, or email washingsolutionsg@gmail.com. We'll confirm a time slot within minutes.",
   },
 ];
+export const BRAND_COLORS: Record<string, { from: string; to: string }> = {
+  samsung: { from: "#1428A0", to: "#0072C6" },
+  lg: { from: "#A50034", to: "#D80032" },
+  panasonic: { from: "#0055A5", to: "#0088D6" },
+  bosch: { from: "#C3002F", to: "#F0003C" },
+  electrolux: { from: "#011A32", to: "#00478F" },
+  whirlpool: { from: "#FDB813", to: "#F2A900" },
+  mitsubishi: { from: "#E50012", to: "#FF2B38" },
+  sharp: { from: "#E60012", to: "#FF3344" },
+  toshiba: { from: "#FF0000", to: "#E60000" },
+  hitachi: { from: "#E4002B", to: "#C80024" },
+  europace: { from: "#005AAB", to: "#003A6F" },
+  midea: { from: "#0092D0", to: "#006FA3" },
+  fisherpaykel: { from: "#000000", to: "#333333" },
+  siemens: { from: "#00A1E0", to: "#0081B4" },
+  beko: { from: "#005187", to: "#003D66" },
+  miele: { from: "#10B981", to: "#34D399" },
+};
+export const brandKey = (name: string) =>
+  name.toLowerCase().replace(/[^a-z0-9]/g, "");

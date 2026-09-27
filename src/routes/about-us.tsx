@@ -39,7 +39,7 @@ function AboutPage() {
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div>
             <h2 className="text-3xl font-extrabold md:text-4xl">
-              Our <span className="gradient-text">story</span>
+              Our <span className="text-[f7e708]">story</span>
             </h2>
             <div className="mt-5 space-y-4 text-neutral-700">
               <p>
@@ -70,7 +70,7 @@ function AboutPage() {
             ].map((s) => (
               <div key={s.v} className="rounded-2xl border border-black/10 bg-white p-6 text-center shadow-sm">
                 <div className="text-3xl font-black text-black md:text-4xl">
-                  <span className="gradient-text">{s.k}</span>
+                  <span className="text-[#f7e708]">{s.k}</span>
                 </div>
                 <div className="mt-1 text-sm font-medium text-neutral-600">{s.v}</div>
               </div>
@@ -107,7 +107,7 @@ function AboutPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 md:px-6">
         <div className="rounded-3xl border border-black/10 bg-white p-8 md:p-12">
           <h2 className="text-2xl font-extrabold md:text-3xl">
-            Our <span className="gradient-text">mission</span>
+            Our <span className="text-[#f7e708]">mission</span>
           </h2>
           <p className="mt-4 max-w-3xl text-neutral-700">
             To make washing machine repair in Singapore effortless, honest and affordable.

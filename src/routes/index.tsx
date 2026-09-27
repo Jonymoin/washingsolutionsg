@@ -5,9 +5,10 @@ import {
 } from "lucide-react";
 import { trackConversion } from "@/lib/tracking";
 import { CTASection } from "@/components/CTASection";
-import { AREAS, REVIEWS, FAQS } from "@/lib/site-data";
+import { AREAS, FAQS } from "@/lib/site-data";
 import { SERVICE_DETAILS } from "@/lib/service-details";
 import { BRAND_DETAILS } from "@/lib/brand-details";
+import {  BRAND_COLORS, brandKey } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -121,7 +122,7 @@ function HomePage() {
             { icon: CheckCircle2, title: "Genuine Spare Parts", desc: "We use OEM parts to keep your washer running for years to come." },
             { icon: MapPin, title: "Islandwide Coverage", desc: "From Woodlands to Changi — we service every neighbourhood in Singapore." },
           ].map((f) => (
-            <div key={f.title} className="group rounded-2xl border border-black/10 bg-white p-6 transition hover:-translate-y-1 hover:border-yellow hover:shadow-[0_20px_50px_-20px_var(--yellow)]">
+            <div key={f.title} className="group rounded-2xl border border-black/10 bg-white p-6 shadow-[0_20px_50px_-20px_var(--yellow)] transition hover:-translate-y-1 hover:border-yellow hover:shadow-[0_20px_50px_-20px_var(--yellow)]">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-yellow">
                 <f.icon className="h-6 w-6 text-black" />
               </div>
@@ -139,11 +140,11 @@ function HomePage() {
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Our services</span>
               <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">
-                Every washing machine, <span className="gradient-text">every fix</span>
+                Every washing machine, <span className="text-[#f7e708]">every fix</span>
               </h2>
             </div>
-            <Link to="/services" onClick={() => trackConversion()} className="btn-outline text-sm">
-              View all services <ArrowRight className="h-4 w-4" />
+            <Link to="/services" onClick={() => trackConversion()} className="bg-[#f7e708] px-6 py-2 shadow-blue-600 shadow-2xl font-bold rounded-4xl text-sm hover:bg-black hover:text-[#f7e708]">
+              View all services <ArrowRight className="h-4 w-4 ml-8 " />
             </Link>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -173,22 +174,34 @@ function HomePage() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Brands we repair</span>
           <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">
-            All major brands, <span className="gradient-text">expertly serviced</span>
+            All major brands, <span className="text-[#f7e708]">expertly serviced</span>
           </h2>
         </div>
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {BRAND_DETAILS.map((b) => (
-            <Link
-              key={b.slug}
-              to="/brands/$slug"
-              params={{ slug: b.slug }}
-              onClick={() => trackConversion()}
-              className="flex items-center justify-center rounded-xl border border-black/10 bg-white px-4 py-6 text-sm font-semibold text-neutral-800 transition hover:border-yellow hover:bg-yellow/10"
-            >
-              {b.name}
-            </Link>
-          ))}
-        </div>
+  {BRAND_DETAILS.map((b) => {
+    const c = BRAND_COLORS[brandKey(b.name)];
+    return (
+      <Link
+        key={b.slug}
+        to="/brands/$slug"
+        params={{ slug: b.slug }}
+        onClick={() => trackConversion()}
+        style={
+          c
+            ? { background: `linear-gradient(135deg, ${c.from}, ${c.to})` }
+            : undefined
+        }
+        className={`flex items-center justify-center rounded-xl border px-4 py-6 text-sm font-semibold transition hover:opacity-90 hover:scale-[1.02] ${
+          c
+            ? "border-transparent text-white shadow-sm"
+            : "border-black/10 bg-white text-neutral-800 hover:border-yellow hover:bg-yellow/10"
+        }`}
+      >
+        {b.name}
+      </Link>
+    );
+  })}
+</div>
         <div className="mt-8 text-center">
           <Link to="/brands" onClick={() => trackConversion()} className="btn-outline text-sm">
             Explore all brands <ArrowRight className="h-4 w-4" />
@@ -196,38 +209,80 @@ function HomePage() {
         </div>
       </section>
 
-      {/* REVIEWS */}
-      <section className="bg-black py-20 text-white">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs font-semibold uppercase tracking-widest text-yellow">Reviews</span>
-            <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">
-              What our <span className="shine-text">customers say</span>
-            </h2>
-          </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {REVIEWS.slice(0, 3).map((r) => (
-              <div key={r.name} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-                <div className="flex gap-1">
-                  {Array.from({ length: r.rating }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-yellow text-yellow" />
-                  ))}
-                </div>
-                <p className="mt-4 text-sm text-neutral-200">"{r.text}"</p>
-                <div className="mt-6 text-sm">
-                  <div className="font-semibold">{r.name}</div>
-                  <div className="text-neutral-400">{r.area}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link to="/reviews" onClick={() => trackConversion()} className="btn-glass text-sm">
-              Read more reviews <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* OUR WORK */}
+
+<section className="bg-black py-20 text-white">
+  <div className="mx-auto max-w-7xl px-4 md:px-6">
+    <div className="mx-auto max-w-2xl text-center">
+      <span className="text-xs font-semibold uppercase tracking-widest text-yellow">
+        Our Work
+      </span>
+
+```
+  <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">
+    Washing Machine <span className="shine-text">Repair Work</span>
+  </h2>
+
+  <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-neutral-400 md:text-base">
+    Take a look at some of our washing machine repair and servicing work
+    in Singapore. Our technicians handle common washing machine problems,
+    servicing, maintenance and cleaning with practical repair solutions.
+  </p>
+</div>
+
+<div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
+  {[
+    {
+      src: "/images/wssg1.webp",
+      alt: "Washing machine repair service in Singapore",
+    },
+    {
+      src: "/images/wssg2.webp",
+      alt: "Washing machine servicing and repair work Singapore",
+    },
+    {
+      src: "/images/wssg3.webp",
+      alt: "Washing machine technician repair work in Singapore",
+    },
+    {
+      src: "/images/wssg4.webp",
+      alt: "Washing machine maintenance and repair service Singapore",
+    },
+    {
+      src: "/images/wssg5.webp",
+      alt: "Washing machine cleaning and repair work Singapore",
+    },
+  ].map((image) => (
+    <div
+      key={image.src}
+      className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]"
+    >
+      <img
+        src={image.src}
+        alt={image.alt}
+        loading="lazy"
+        decoding="async"
+        className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+    </div>
+  ))}
+</div>
+
+<div className="mt-10 text-center">
+  <Link
+    to="/services"
+    onClick={() => trackConversion()}
+    className="btn-glass inline-flex items-center gap-2 text-sm"
+  >
+    Explore Our Repair Services
+    <ArrowRight className="h-4 w-4" />
+  </Link>
+</div>
+```
+
+  </div>
+</section>
+
 
       {/* SERVICE AREAS */}
       <section className="mx-auto max-w-7xl px-4 py-20 md:px-6">
@@ -235,7 +290,7 @@ function HomePage() {
           <div>
             <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Coverage</span>
             <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">
-              Servicing <span className="gradient-text">all of Singapore</span>, 7 days a week
+              Servicing <span className="text-[#f7e708]">all of Singapore</span>, 7 days a week
             </h2>
             <p className="mt-3 text-muted-foreground">
               From the north to the east, west to the CBD — our technicians reach every neighbourhood
@@ -261,7 +316,7 @@ function HomePage() {
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Faqs</span>
             <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">
-              Frequently <span className="gradient-text">asked questions</span>
+              Frequently <span className="text-[#f7e708]">asked questions</span>
             </h2>
           </div>
           <div className="mt-10 space-y-3">
@@ -290,7 +345,7 @@ function HomePage() {
         <div className="grid gap-8 rounded-3xl border border-black/10 bg-white p-8 md:grid-cols-2 md:p-12">
           <div>
             <h2 className="text-3xl font-extrabold md:text-4xl">
-              Get in <span className="gradient-text">touch</span>
+              Get in <span className="text-[#f7e708]">touch</span>
             </h2>
             <p className="mt-3 text-muted-foreground">
               Call, message or email us — we respond within minutes, every day of the week.

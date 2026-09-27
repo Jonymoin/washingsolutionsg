@@ -45,7 +45,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-neutral-300">
             {[
               ["/coverage-areas", "Coverage Areas"],
-              ["/reviews", "Reviews"],
+              
               ["/faqs", "FAQs"],
               ["/contact", "Contact"],
               ["/about-us", "About Us"],

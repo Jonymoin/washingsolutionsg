@@ -64,7 +64,7 @@ function ContactPage() {
             className="rounded-2xl border border-black/10 bg-neutral-50 p-6 md:p-8"
           >
             <h2 className="text-2xl font-extrabold">
-              Request a <span className="gradient-text">callback</span>
+              Request a <span className="text-[#f7e708]">callback</span>
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">We'll get back to you within minutes.</p>
 
