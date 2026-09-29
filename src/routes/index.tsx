@@ -342,22 +342,22 @@ function HomePage() {
 
       {/* CONTACT */}
       <section className="mx-auto max-w-7xl px-4 pb-20 md:px-6">
-        <div className="grid gap-8 rounded-3xl border border-black/10 bg-white p-8 md:grid-cols-2 md:p-12">
+        <div className="grid gap-8 rounded-3xl bg-[#09091a] text-[#7b7a6d] border border-[#0a0a0a] p-8 md:grid-cols-2 md:p-12">
           <div>
             <h2 className="text-3xl font-extrabold md:text-4xl">
-              Get in <span className="text-[#f7e708]">touch</span>
+              Get in <span className="text-[#fefefb]">touch</span>
             </h2>
-            <p className="mt-3 text-muted-foreground">
+            <p className="mt-3 text-white">
               Call, message or email us — we respond within minutes, every day of the week.
             </p>
             <div className="mt-6 space-y-3 text-sm">
-              <a href="tel:+6585301773" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg border border-black/10 p-3 hover:border-yellow">
+              <a href="tel:+6585301773" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg border border-[#000] bg-[#f72905] text-[#000]  font-bold p-3 hover:border-yellow">
                 <Phone className="h-4 w-4" /> +65 8530 1773
               </a>
-              <a href="https://wa.me/6585301773" target="_blank" rel="noreferrer" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg border border-black/10 p-3 hover:border-yellow">
+              <a href="https://wa.me/6585301773" target="_blank" rel="noreferrer" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg bg-[#0aea1c] text-[#000] font-bold border border-[#000] p-3 hover:border-yellow">
                 <MessageCircle className="h-4 w-4" /> WhatsApp Chat
               </a>
-              <a href="mailto:washingsolutionsg@gmail.com" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg border border-black/10 p-3 hover:border-yellow">
+              <a href="mailto:washingsolutionsg@gmail.com" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg border border-[#000] bg-[#080feb] text-[#bde107] font-bold p-3 hover:border-yellow">
                 <span className="font-mono text-xs">@</span> washingsolutionsg@gmail.com
               </a>
             </div>
@@ -369,30 +369,77 @@ function HomePage() {
   );
 }
 
+
 function ContactForm() {
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        const name = formData.get("name") as string;
+        const phone = formData.get("phone") as string;
+        const issue = formData.get("issue") as string;
+
+        const whatsappMessage = `Hello WashingSolution SG!
+
+Name: ${name}
+Phone: ${phone}
+Issue: ${issue}
+
+I would like to request a callback.`;
+
+        const whatsappURL = `https://wa.me/6585301773?text=${encodeURIComponent(
+          whatsappMessage
+        )}`;
+
         trackConversion();
-        window.location.href = "https://wa.me/6585301773";
+        window.open(whatsappURL, "_blank", "noopener,noreferrer");
       }}
-      className="rounded-2xl bg-neutral-50 p-6"
+      className="rounded-2xl bg-[#000053] p-6"
     >
       <div className="grid gap-4">
         <div>
-          <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600">Name</label>
-          <input required className="mt-1 w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm outline-none focus:border-yellow focus:ring-2 focus:ring-yellow/30" />
+          <label className="text-xs font-semibold uppercase tracking-wider text-[#f7e708]">
+            Name
+          </label>
+          <input
+            name="name"
+            required
+            placeholder="Enter your name"
+            className="mt-1 w-full rounded-lg border border-black/10 bg-black text-white px-3 py-2 text-sm outline-none focus:border-yellow focus:ring-2 focus:ring-yellow/30"
+          />
         </div>
+
         <div>
-          <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600">Phone</label>
-          <input required type="tel" className="mt-1 w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm outline-none focus:border-yellow focus:ring-2 focus:ring-yellow/30" />
+          <label className="text-xs font-semibold uppercase tracking-wider text-[#f7e708]">
+            Phone
+          </label>
+          <input
+            name="phone"
+            required
+            type="tel"
+            placeholder="Enter your phone number"
+            className="mt-1 w-full rounded-lg border border-black/10 bg-black text-white px-3 py-2 text-sm outline-none focus:border-yellow focus:ring-2 focus:ring-yellow/30"
+          />
         </div>
+
         <div>
-          <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600">Describe the issue</label>
-          <textarea rows={3} className="mt-1 w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm outline-none focus:border-yellow focus:ring-2 focus:ring-yellow/30" />
+          <label className="text-xs font-semibold uppercase tracking-wider text-[#f7e708]">
+            Describe the issue
+          </label>
+          <textarea
+            name="issue"
+            required
+            rows={3}
+            placeholder="Describe your washing machine problem..."
+            className="mt-1 w-full rounded-lg border border-black/10 bg-black text-white px-3 py-2 text-sm outline-none focus:border-yellow focus:ring-2 focus:ring-yellow/30"
+          />
         </div>
-        <button type="submit" onClick={() => trackConversion()} className="btn-yellow">
+
+        <button type="submit" className="btn-yellow">
           Request Callback
         </button>
       </div>
