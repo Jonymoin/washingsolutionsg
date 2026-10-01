@@ -344,20 +344,20 @@ function HomePage() {
       <section className="mx-auto max-w-7xl px-4 pb-20 md:px-6">
         <div className="grid gap-8 rounded-3xl bg-[#09091a] text-[#7b7a6d] border border-[#0a0a0a] p-8 md:grid-cols-2 md:p-12">
           <div>
-            <h2 className="text-3xl font-extrabold md:text-4xl">
+            <h2 className="text-3xl text-[#f7e708] font-extrabold md:text-4xl">
               Get in <span className="text-[#fefefb]">touch</span>
             </h2>
             <p className="mt-3 text-white">
               Call, message or email us — we respond within minutes, every day of the week.
             </p>
             <div className="mt-6 space-y-3 text-sm">
-              <a href="tel:+6585301773" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg border border-[#000] bg-[#f72905] text-[#000]  font-bold p-3 hover:border-yellow">
+              <a href="tel:+6585301773" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg border border-[#000] bg-[#f7e708] text-[#000]  font-bold p-3 hover:border-yellow">
                 <Phone className="h-4 w-4" /> +65 8530 1773
               </a>
-              <a href="https://wa.me/6585301773" target="_blank" rel="noreferrer" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg bg-[#0aea1c] text-[#000] font-bold border border-[#000] p-3 hover:border-yellow">
+              <a href="https://wa.me/6585301773" target="_blank" rel="noreferrer" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg bg-[#f7e708] text-[#000] font-bold border border-[#000] p-3 hover:border-yellow">
                 <MessageCircle className="h-4 w-4" /> WhatsApp Chat
               </a>
-              <a href="mailto:washingsolutionsg@gmail.com" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg border border-[#000] bg-[#080feb] text-[#bde107] font-bold p-3 hover:border-yellow">
+              <a href="mailto:washingsolutionsg@gmail.com" onClick={() => trackConversion()} className="flex items-center gap-3 rounded-lg border border-[#000] bg-[#f7e708] text-[#000] font-bold p-3 hover:border-yellow">
                 <span className="font-mono text-xs">@</span> washingsolutionsg@gmail.com
               </a>
             </div>

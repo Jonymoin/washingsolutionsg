@@ -9,7 +9,11 @@ export function Footer() {
         <div className="md:col-span-1">
           <div className="flex items-center gap-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-yellow">
-              <span className="text-lg font-black text-black">W</span>
+               <img
+      src="/logo.webp"
+      alt="WashingSolutionSG Logo"
+      className="h-full w-full object-contain"
+    />
             </div>
             <span className="text-lg font-extrabold">WashingSolutionSG</span>
           </div>
